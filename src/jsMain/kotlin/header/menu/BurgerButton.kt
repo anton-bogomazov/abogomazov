@@ -15,6 +15,7 @@ import org.jetbrains.compose.web.dom.Div
 
 // todo this thing is ugly, change the styles
 // also I don't like the s. design of this component, too low level and smelly
+// fixme should close the vertical menu after category selection
 @OptIn(ExperimentalComposeWebApi::class)
 @Composable
 fun BurgerButton() {

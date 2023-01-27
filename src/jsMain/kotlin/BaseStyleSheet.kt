@@ -2,7 +2,6 @@ import org.jetbrains.compose.web.css.*
 
 object BaseStyleSheet : StyleSheet() {
 
-    // fixme should not fill the container, only select text
     val selectedText by style {
         backgroundColor(Color.black)
         color(Color.white)

@@ -40,7 +40,8 @@ object Menu : StyleSheet(BaseStyleSheet) {
 
     val menuCategoryText by style {
         fontWeight("bold")
-        padding(10.px)
+        margin(8.px)
+        padding(2.px)
     }
 
 }
