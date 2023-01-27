@@ -26,9 +26,9 @@ private fun SocialIconLink(link: SocialMediaLink) {
 }
 
 private enum class SocialMediaLink(val address: String, val icon: String) {
-    EMAIL("", "icons/mail.svg"),
-    GITHUB("", "icons/github.svg"),
-    LINKEDIN("", "icons/linkedin.svg"),
-    INSTAGRAM("", "icons/instagram.svg"),
-    TELEGRAM("", "icons/telegram.svg")
+    EMAIL("mailto:abogomazov.dev@gmail.com", "icons/mail.svg"),
+    GITHUB("https://github.com/anton-bogomazov", "icons/github.svg"),
+    LINKEDIN("https://www.linkedin.com/in/anton-p-bogomazov/", "icons/linkedin.svg"),
+    INSTAGRAM("https://instagram.com/so_so_ciable", "icons/instagram.svg"),
+    TELEGRAM("https://t.me/antonbogomazov", "icons/telegram.svg")
 }
