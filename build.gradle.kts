@@ -30,6 +30,7 @@ kotlin {
             dependencies {
                 implementation(compose.web.core)
                 implementation(compose.runtime)
+                implementation("app.softwork:routing-compose:0.2.11")
             }
         }
         val jsTest by getting {
