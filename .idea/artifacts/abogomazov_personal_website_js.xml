@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="abogomazov-personal-website-js">
+    <output-path>$PROJECT_DIR$/build/libs</output-path>
+    <root id="archive" name="abogomazov-personal-website-js.jar">
+      <element id="module-output" name="abogomazov-personal-website.jsMain" />
+    </root>
+  </artifact>
+</component>
