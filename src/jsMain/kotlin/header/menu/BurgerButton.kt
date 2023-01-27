@@ -1,9 +1,9 @@
 package header.menu
 
-import StyleConstants.menuSwitchWidth
 import androidx.compose.runtime.*
 import header.style.Burger.burgerButton
 import header.style.Burger.burgerLineElement
+import header.style.Header.menuSwitchWidth
 import kotlinx.browser.window
 import org.jetbrains.compose.web.ExperimentalComposeWebApi
 import org.jetbrains.compose.web.css.DisplayStyle

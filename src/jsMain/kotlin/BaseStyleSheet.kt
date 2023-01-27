@@ -8,12 +8,6 @@ object BaseStyleSheet : StyleSheet() {
     }
 
     init {
-        "a" style {
-            hover style {
-                color(Color.darkgray)
-            }
-        }
-
         universal style {
             fontFamily("monospace")
 
@@ -21,6 +15,8 @@ object BaseStyleSheet : StyleSheet() {
             textDecoration("none")
 
             margin(0.px)
+
+            selector("a").style { hover { color(Color.darkgray) } }
         }
     }
 }

@@ -1,3 +1,4 @@
+import footer.Footer
 import header.Header
 import org.jetbrains.compose.web.css.Style
 import org.jetbrains.compose.web.renderComposable
@@ -8,6 +9,10 @@ fun main() {
 
         Layout {
             Header()
+            MainContentLayout {
+
+                Footer()
+            }
         }
     }
 }

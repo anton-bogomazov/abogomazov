@@ -1,7 +1,7 @@
 package header.style
 
 import BaseStyleSheet
-import StyleConstants.menuSwitchWidth
+import header.style.Header.menuSwitchWidth
 import org.jetbrains.compose.web.css.*
 
 object Menu : StyleSheet(BaseStyleSheet) {

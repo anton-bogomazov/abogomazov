@@ -5,6 +5,8 @@ import org.jetbrains.compose.web.css.*
 
 object Header : StyleSheet(BaseStyleSheet) {
 
+    val menuSwitchWidth = 640.px
+
     val navigationBar by style {
         display(DisplayStyle.Flex)
         justifyContent(JustifyContent.FlexEnd)

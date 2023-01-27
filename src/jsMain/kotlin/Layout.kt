@@ -22,11 +22,7 @@ fun MainContentLayout(content: @Composable () -> Unit) {
     Main({
         style {
             display(DisplayStyle.Block)
-            margin(0.px)
-            width(100.percent)
-            maxWidth(1600.px)
-            minHeight(100.vh)
-            padding(0.px, 100.px)
+            boxSizing("border-box")
         }
     }) {
         content()
