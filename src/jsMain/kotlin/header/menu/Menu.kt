@@ -14,7 +14,7 @@ fun Menu(orientation: MenuOrientation) {
         }
     }) {
         menuCategories.forEach {
-            MenuCategory(it.name.lowercase())
+            MenuCategory(it)
         }
     }
 }
@@ -25,4 +25,4 @@ enum class MenuOrientation {
 }
 
 private val menuCategories =
-    listOf(MenuCategory.ABOUT_ME, MenuCategory.PORTFOLIO, MenuCategory.CV, MenuCategory.BLOG)
+    listOf(MenuCategory.ROOT, MenuCategory.ABOUT_ME, MenuCategory.PORTFOLIO, MenuCategory.CV, MenuCategory.BLOG)

@@ -7,20 +7,22 @@ import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.Span
 import org.jetbrains.compose.web.dom.Text
 
-enum class MenuCategory {
-    ABOUT_ME,
-    CV,
-    PORTFOLIO,
-    BLOG
+enum class MenuCategory(val link: String) {
+    ROOT("/#/"),
+    ABOUT_ME("/#/about-me"),
+    CV("/#/cv"),
+    PORTFOLIO("/#/portfolio"),
+    BLOG("/#/blog")
 }
 
 // todo how to move between an "pages" (SPA/MPA)
 @Composable
-fun MenuCategory(content: String, selected: Boolean = false) {
+fun MenuCategory(category: MenuCategory, selected: Boolean = false) {
+    val content = category.name.lowercase()
     if (selected) {
         MenuCategoryText(content)
     } else {
-        MenuCategoryLink(content, "")
+        MenuCategoryLink(content, category.link)
     }
 }
 
