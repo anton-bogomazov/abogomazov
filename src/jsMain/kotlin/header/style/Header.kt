@@ -14,9 +14,7 @@ object Header : StyleSheet(BaseStyleSheet) {
         height(80.px)
         width(100.percent)
         boxSizing("border-box")
-        position(Position.Fixed)
         padding(0.px, 40.px)
-        top(0.px)
     }
 
 }

@@ -1,3 +1,4 @@
+import content.ViewContainer
 import footer.Footer
 import header.Header
 import org.jetbrains.compose.web.css.Style
@@ -10,7 +11,7 @@ fun main() {
         Layout {
             Header()
             MainContentLayout {
-
+                ViewContainer()
                 Footer()
             }
         }

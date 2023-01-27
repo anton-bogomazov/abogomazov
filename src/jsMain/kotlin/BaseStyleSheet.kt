@@ -16,7 +16,8 @@ object BaseStyleSheet : StyleSheet() {
 
             margin(0.px)
 
-            selector("a").style { hover { color(Color.darkgray) } }
+            // fixme all text is inherit this property wtf
+//            selector("a").style { hover { color(Color.darkgray) } }
         }
     }
 }

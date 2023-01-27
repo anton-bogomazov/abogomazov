@@ -22,7 +22,10 @@ object Footer : StyleSheet(BaseStyleSheet) {
         flexDirection(FlexDirection.Column)
         justifyContent(JustifyContent.Center)
         alignItems(AlignItems.Center)
-        height(50.px)
+        boxSizing("border-box")
+        padding(20.px)
+        lineHeight(26.px)
+        minHeight(50.px)
     }
 
 }
