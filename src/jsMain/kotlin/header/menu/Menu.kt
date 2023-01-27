@@ -1,12 +1,18 @@
 package header.menu
 
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import header.style.Menu.horizontalMenu
 import header.style.Menu.verticalMenu
+import kotlinx.browser.window
 import org.jetbrains.compose.web.dom.Div
 
 @Composable
 fun Menu(orientation: MenuOrientation) {
+    var currentCategory by remember {
+        val currentHash = window.location.hash
+        mutableStateOf(MenuCategory.fromHashOrRoot(currentHash))
+    }
+
     Div({
         when (orientation) {
             MenuOrientation.HORIZONTAL -> classes(horizontalMenu)
@@ -14,7 +20,7 @@ fun Menu(orientation: MenuOrientation) {
         }
     }) {
         menuCategories.forEach {
-            MenuCategory(it)
+            MenuCategory(it, it == currentCategory) { category -> currentCategory = category }
         }
     }
 }

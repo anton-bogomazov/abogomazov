@@ -1,8 +1,10 @@
 package header.style
 
 import BaseStyleSheet
+import header.style.Header.headerHeight
 import header.style.Header.menuSwitchWidth
 import org.jetbrains.compose.web.css.*
+import org.jetbrains.compose.web.css.Color.white
 
 object Menu : StyleSheet(BaseStyleSheet) {
 
@@ -22,11 +24,12 @@ object Menu : StyleSheet(BaseStyleSheet) {
         justifyContent(JustifyContent.FlexStart)
         alignItems(AlignItems.Center)
         position(Position.Fixed)
-        top(100.px)
+        top(headerHeight)
         bottom(0.px)
         right(0.px)
         height(100.vh)
         width(100.vw)
+        backgroundColor(white)
 
         media(mediaMaxWidth(menuSwitchWidth)) {
             self style {

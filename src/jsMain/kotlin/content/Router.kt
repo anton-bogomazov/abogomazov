@@ -10,11 +10,11 @@ import content.view.portfolio.PortfolioView
 @Composable
 fun route() {
     HashRouter(initPath = "/") {
-        route("/") { GreetingView() }
-        route("/about-me") { AboutMeView() }
-        route("/cv") { CvView() }
-        route("/portfolio") { PortfolioView() }
-        route("/blog") { BlogView() }
+        route("root") { GreetingView() }
+        route("about-me") { AboutMeView() }
+        route("cv") { CvView() }
+        route("portfolio") { PortfolioView() }
+        route("blog") { BlogView() }
         noMatch { GreetingView() }
     }
 }
