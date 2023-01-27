@@ -3,6 +3,8 @@ package footer.iconsPanel
 import androidx.compose.runtime.Composable
 import footer.style.Footer.icon
 import footer.style.Footer.iconPanel
+import org.jetbrains.compose.web.attributes.ATarget
+import org.jetbrains.compose.web.attributes.target
 import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Img
@@ -18,7 +20,7 @@ fun SocialMediaIconPanel() {
 
 @Composable
 private fun SocialIconLink(link: SocialMediaLink) {
-    A(href = link.address) {
+    A(href = link.address, attrs = { target(ATarget.Blank) }) {
         Img(src = link.icon) {
             classes(icon)
         }
