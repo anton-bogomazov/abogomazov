@@ -1,9 +1,10 @@
-package content.view
+package content.view.blog
 
 import androidx.compose.runtime.Composable
 import org.jetbrains.compose.web.css.DisplayStyle
 import org.jetbrains.compose.web.css.boxSizing
 import org.jetbrains.compose.web.css.display
+import org.jetbrains.compose.web.dom.Br
 import org.jetbrains.compose.web.dom.Section
 import org.jetbrains.compose.web.dom.Text
 
@@ -15,6 +16,19 @@ fun BlogView() {
             boxSizing("border-box")
         }
     }) {
-        Text("blog")
+        BlogPost()
+        BlogPost()
+        BlogPost()
+    }
+}
+
+@Composable
+private fun BlogPost() {
+    Section {
+        Text("Blog post title")
+        Br()
+        Text("Short Content")
+        Br()
+        Text("Read more and render post view")
     }
 }
