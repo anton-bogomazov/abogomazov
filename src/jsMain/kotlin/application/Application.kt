@@ -3,8 +3,8 @@ package application
 import application.ApplicationLayoutStyles.baseLayout
 import androidx.compose.runtime.Composable
 import application.content.ViewContainer
-import application.footer.FooterPanel
-import application.header.NavigationPanel
+import application.footerPanel.FooterPanel
+import application.navigationPanel.NavigationPanel
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Footer as DomFooter
 import org.jetbrains.compose.web.dom.Header as DomHeader

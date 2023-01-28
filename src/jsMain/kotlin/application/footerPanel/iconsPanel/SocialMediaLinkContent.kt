@@ -1,4 +1,4 @@
-package application.footer.iconsPanel
+package application.footerPanel.iconsPanel
 
 const val EMAIL_LINK = "mailto:abogomazov.dev@gmail.com"
 const val GITHUB_LINK = "https://github.com/anton-bogomazov"

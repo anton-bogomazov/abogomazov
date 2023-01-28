@@ -1,7 +1,6 @@
-package application.footer.style
+package application.footerPanel.style
 
 import GlobalStyles
-import application.ApplicationLayoutStyles
 import org.jetbrains.compose.web.css.*
 
 object FooterPanelStyles : StyleSheet(GlobalStyles) {

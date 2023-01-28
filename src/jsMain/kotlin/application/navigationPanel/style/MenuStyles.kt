@@ -1,7 +1,7 @@
-package application.header.style
+package application.navigationPanel.style
 
 import application.ApplicationLayoutStyles
-import application.header.style.NavigationPanelStyles.panelHeight
+import application.navigationPanel.style.NavigationPanelStyles.panelHeight
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.css.Color.white
 

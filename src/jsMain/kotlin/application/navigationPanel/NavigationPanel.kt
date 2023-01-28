@@ -1,9 +1,9 @@
-package application.header
+package application.navigationPanel
 
 import androidx.compose.runtime.Composable
-import application.header.menu.Menu
-import application.header.menu.MenuOrientation
-import application.header.style.NavigationPanelStyles
+import application.navigationPanel.menu.Menu
+import application.navigationPanel.menu.MenuOrientation
+import application.navigationPanel.style.NavigationPanelStyles
 import org.jetbrains.compose.web.dom.Nav
 
 @Composable

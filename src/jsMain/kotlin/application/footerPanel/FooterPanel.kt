@@ -1,8 +1,8 @@
-package application.footer
+package application.footerPanel
 
 import androidx.compose.runtime.Composable
-import application.footer.iconsPanel.SocialMediaIconPanel
-import application.footer.style.FooterPanelStyles.footerPanel
+import application.footerPanel.iconsPanel.SocialMediaIconPanel
+import application.footerPanel.style.FooterPanelStyles.footerPanel
 import org.jetbrains.compose.web.dom.*
 
 @Composable

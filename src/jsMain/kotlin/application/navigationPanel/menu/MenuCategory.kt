@@ -1,4 +1,4 @@
-package application.header.menu
+package application.navigationPanel.menu
 
 enum class MenuCategory {
     ROOT,

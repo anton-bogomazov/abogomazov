@@ -1,9 +1,9 @@
-package application.footer.iconsPanel
+package application.footerPanel.iconsPanel
 
 import androidx.compose.runtime.Composable
-import application.footer.style.FooterPanelStyles.icon
-import application.footer.style.FooterPanelStyles.iconLink
-import application.footer.style.FooterPanelStyles.iconPanel
+import application.footerPanel.style.FooterPanelStyles.icon
+import application.footerPanel.style.FooterPanelStyles.iconLink
+import application.footerPanel.style.FooterPanelStyles.iconPanel
 import org.jetbrains.compose.web.attributes.ATarget
 import org.jetbrains.compose.web.attributes.target
 import org.jetbrains.compose.web.dom.A

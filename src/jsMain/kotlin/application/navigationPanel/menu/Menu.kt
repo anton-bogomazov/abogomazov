@@ -1,12 +1,11 @@
-package application.header.menu
+package application.navigationPanel.menu
 
 import GlobalStyles.hoveredLink
 import GlobalStyles.invertedText
 import androidx.compose.runtime.*
-import application.header.style.MenuStyles
-import application.header.style.MenuStyles.horizontalMenu
-import application.header.style.MenuStyles.menuItem
-import application.header.style.MenuStyles.verticalMenu
+import application.navigationPanel.style.MenuStyles.horizontalMenu
+import application.navigationPanel.style.MenuStyles.menuItem
+import application.navigationPanel.style.MenuStyles.verticalMenu
 import kotlinx.browser.window
 import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.Div

@@ -1,4 +1,4 @@
-package application.header.style
+package application.navigationPanel.style
 
 import application.ApplicationLayoutStyles
 import org.jetbrains.compose.web.css.*

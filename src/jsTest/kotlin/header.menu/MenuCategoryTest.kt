@@ -1,6 +1,6 @@
 package header.menu
 
-import application.header.menu.MenuCategory
+import application.navigationPanel.menu.MenuCategory
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
 
