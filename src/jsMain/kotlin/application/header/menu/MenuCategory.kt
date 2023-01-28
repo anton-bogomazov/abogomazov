@@ -1,7 +1,7 @@
 package application.header.menu
 
-import application.ApplicationLayoutStyles.linkHover
-import application.ApplicationLayoutStyles.selectedText
+import GlobalStyles.linkHover
+import GlobalStyles.selectedText
 import androidx.compose.runtime.Composable
 import application.header.style.Menu.menuCategoryText
 import org.jetbrains.compose.web.dom.A

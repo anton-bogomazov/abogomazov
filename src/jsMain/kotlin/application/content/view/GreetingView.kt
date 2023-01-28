@@ -1,6 +1,6 @@
 package application.content.view
 
-import application.ApplicationLayoutStyles.selectedText
+import GlobalStyles.selectedText
 import androidx.compose.runtime.Composable
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.*

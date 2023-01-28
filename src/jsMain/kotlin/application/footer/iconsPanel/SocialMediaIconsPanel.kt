@@ -1,8 +1,9 @@
 package application.footer.iconsPanel
 
 import androidx.compose.runtime.Composable
-import application.footer.style.Footer.icon
-import application.footer.style.Footer.iconPanel
+import application.footer.style.FooterPanelStyles.icon
+import application.footer.style.FooterPanelStyles.iconLink
+import application.footer.style.FooterPanelStyles.iconPanel
 import org.jetbrains.compose.web.attributes.ATarget
 import org.jetbrains.compose.web.attributes.target
 import org.jetbrains.compose.web.dom.A
@@ -14,23 +15,24 @@ fun SocialMediaIconPanel() {
     Div({
         classes(iconPanel)
     }) {
-        SocialMediaLink.values().forEach { SocialIconLink(it) }
+        SocialMediaLink.values().forEach { SocialMediaIconLink(it) }
     }
 }
 
 @Composable
-private fun SocialIconLink(link: SocialMediaLink) {
-    A(href = link.address, attrs = { target(ATarget.Blank) }) {
-        Img(src = link.icon) {
-            classes(icon)
-        }
+private fun SocialMediaIconLink(link: SocialMediaLink) {
+    A(href = link.address, attrs = {
+        classes(iconLink)
+        target(ATarget.Blank)
+    }) {
+        Img(src = link.iconPath) { classes(icon) }
     }
 }
 
-private enum class SocialMediaLink(val address: String, val icon: String) {
-    EMAIL("mailto:abogomazov.dev@gmail.com", "icons/mail.svg"),
-    GITHUB("https://github.com/anton-bogomazov", "icons/github.svg"),
-    LINKEDIN("https://www.linkedin.com/in/anton-p-bogomazov/", "icons/linkedin.svg"),
-    INSTAGRAM("https://instagram.com/so_so_ciable", "icons/instagram.svg"),
-    TELEGRAM("https://t.me/antonbogomazov", "icons/telegram.svg")
+private enum class SocialMediaLink(val address: String, val iconPath: String) {
+    EMAIL(EMAIL_LINK, EMAIL_ICON_PATH),
+    GITHUB(GITHUB_LINK, GITHUB_ICON_PATH),
+    LINKEDIN(LINKEDIN_LINK, LINKEDIN_ICON_PATH),
+    INSTAGRAM(INSTAGRAM_LINK, INSTAGRAM_ICON_PATH),
+    TELEGRAM(TELEGRAM_LINK, TELEGRAM_ICON_PATH)
 }
