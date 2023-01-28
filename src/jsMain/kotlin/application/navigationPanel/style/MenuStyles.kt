@@ -1,11 +1,11 @@
 package application.navigationPanel.style
 
-import application.ApplicationLayoutStyles
+import GlobalStyles
 import application.navigationPanel.style.NavigationPanelStyles.panelHeight
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.css.Color.white
 
-object MenuStyles : StyleSheet(ApplicationLayoutStyles) {
+object MenuStyles : StyleSheet(GlobalStyles) {
 
     val horizontalMenu by style {
         display(DisplayStyle.Flex)

@@ -1,9 +1,9 @@
 package application.navigationPanel.style
 
-import application.ApplicationLayoutStyles
+import GlobalStyles
 import org.jetbrains.compose.web.css.*
 
-object NavigationPanelStyles : StyleSheet(ApplicationLayoutStyles) {
+object NavigationPanelStyles : StyleSheet(GlobalStyles) {
 
     // todo unused now. maybe that should be in menu styles. Decide after implementing vertical menu
     val menuOrientationSwitchWidth = 640.px

@@ -14,8 +14,8 @@ import org.jetbrains.compose.web.dom.Main as DomMain
 fun Application() {
     BaseLayout {
         Header()
-//        Main()
-//        Footer()
+        Main()
+        Footer()
     }
 }
 
