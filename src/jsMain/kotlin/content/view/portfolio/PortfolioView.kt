@@ -15,21 +15,16 @@ fun PortfolioView() {
             gridTemplateColumns("200px 200px 200px")
         }
     }) {
-        PortfolioCaseSection()
-        PortfolioCaseSection()
-        PortfolioCaseSection()
-        PortfolioCaseSection()
-        PortfolioCaseSection()
-        PortfolioCaseSection()
+        PortfolioCase.values().forEach { PortfolioCaseSection(it) }
     }
 }
 
 @Composable
-private fun PortfolioCaseSection() {
-    val caseId = "first-case"
+private fun PortfolioCaseSection(case: PortfolioCase) {
     Div({
-        onClick { window.location.assign(window.location.href + "/$caseId") }
+        onClick { window.location.assign(portfolioCaseLink(case.toUri())) }
         style {
+            // todo hover style
             padding(16.px)
             border {
                 left(10.px)
@@ -44,7 +39,9 @@ private fun PortfolioCaseSection() {
             borderWidth(2.px, 2.px, 2.px, 20.px)
         }
     }) {
-        Span({ style { fontWeight("bold") } }) { Text("Header") }
-        Span { Text("Content") }
+        Span({ style { fontWeight("bold") } }) { Text(case.name.lowercase()) }
+        Span { Text(case.description) }
     }
 }
+
+private fun portfolioCaseLink(caseUri: String) = "${window.location.origin}/#portfolio/$caseUri"

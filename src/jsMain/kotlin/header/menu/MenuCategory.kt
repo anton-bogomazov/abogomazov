@@ -16,12 +16,15 @@ enum class MenuCategory(val link: String) {
 
     companion object {
         fun fromHashOrRoot(hash: String) =
-            MenuCategory.valueOf(
-                hash.substringAfter("#")
-                    .replace("-", "_")
-                    .ifBlank { "root" }
-                    .uppercase()
-            )
+            try {
+                MenuCategory.valueOf(
+                    hash.substringAfter("#")
+                        .replace("-", "_")
+                        .uppercase()
+                )
+            } catch (e: IllegalStateException) {
+                ROOT
+            }
     }
 }
 

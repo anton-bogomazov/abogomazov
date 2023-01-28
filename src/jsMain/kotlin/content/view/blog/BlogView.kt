@@ -32,3 +32,14 @@ private fun BlogPost() {
         Text("Read more and render post view")
     }
 }
+
+fun getBlogPostByIndex(index: Int) =
+    when (index) {
+        0 -> "zero post"
+        1 -> "first post"
+        2 -> "second post"
+        3 -> "third post"
+        4 -> "fourth post"
+        5 -> "fifth post"
+        else -> "something went wrong"
+    }

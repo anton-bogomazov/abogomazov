@@ -8,7 +8,7 @@ import org.jetbrains.compose.web.dom.Section
 import org.jetbrains.compose.web.dom.Text
 
 @Composable
-fun BlogPostView() {
+fun BlogPostView(index: Int) {
     Section({
         style {
             display(DisplayStyle.Block)

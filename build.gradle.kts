@@ -1,6 +1,7 @@
 plugins {
-    kotlin("multiplatform")
-    id("org.jetbrains.compose")
+    kotlin("multiplatform") version "1.7.20"
+    id("org.jetbrains.compose") version "1.2.2"
+    id("io.kotest.multiplatform") version "5.5.4"
 }
 
 group "com.abogomazov"
@@ -19,7 +20,7 @@ kotlin {
                 testLogging.showStandardStreams = true
                 useKarma {
                     useChromeHeadless()
-                    useFirefox()
+//                    useFirefox()
                 }
             }
         }
@@ -36,6 +37,8 @@ kotlin {
         val jsTest by getting {
             dependencies {
                 implementation(kotlin("test-js"))
+                implementation("io.kotest:kotest-framework-engine:5.0.2")
+                implementation("io.kotest:kotest-assertions-core:5.0.2")
             }
         }
     }
