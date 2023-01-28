@@ -1,4 +1,4 @@
-package application.content
+package application.content.router
 
 import androidx.compose.runtime.Composable
 import app.softwork.routingcompose.HashRouter
@@ -12,28 +12,26 @@ import application.content.view.portfolio.PortfolioCaseView
 import application.content.view.portfolio.PortfolioView
 
 @Composable
-fun route() {
-    HashRouter(initPath = "/") {
-        route("/") { GreetingView() }
-        route("root") { GreetingView() }
-        route("about-me") { AboutMeView() }
-        route("cv") { CvView() }
-        route("portfolio") {
-            route("/") { PortfolioView() }
-            string { uri -> handlePortfolioCaseString(uri) }
+fun routeOnView() {
+    HashRouter(initPath = INITIAL_PATH) {
+        route(ROOT_ROUTE) { GreetingView() }
+        route(ROOT_VIEW_ROUTE) { GreetingView() }
+        route(ABOUT_ME_VIEW_ROUTE) { AboutMeView() }
+        route(CV_VIEW_ROUTE) { CvView() }
+        route(PORTFOLIO_VIEW_ROUTE) {
+            route(ROOT_ROUTE) { PortfolioView() }
+            string { uri ->
+                PortfolioCase.fromUri(uri)
+                    .map { case -> PortfolioCaseView(case) }
+                    .mapLeft { PortfolioView() }
+            }
             noMatch { PageNotFoundView() }
         }
-        route("blog") {
-            route("/") { BlogView() }
+        route(BLOG_VIEW_ROUTE) {
+            route(ROOT_ROUTE) { BlogView() }
             int { /* todo handle blog post id */ }
             noMatch { PageNotFoundView() }
         }
         noMatch { PageNotFoundView() }
     }
-}
-
-@Composable
-private fun handlePortfolioCaseString(uri: String) {
-    val case = PortfolioCase.fromUri(uri)
-    return if (case.error != null) PortfolioView() else PortfolioCaseView(case.result!!)
 }

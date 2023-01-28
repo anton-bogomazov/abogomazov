@@ -3,6 +3,7 @@ package application.content.view.portfolio
 import androidx.compose.runtime.Composable
 import application.content.view.portfolio.case.AutomatingLibraryPublicationCase
 import application.content.view.portfolio.case.FunctionalToImperativeCase
+import arrow.core.Either
 
 private const val AUTOMATING_LIBRARY_PUBLICATION_DESCRIPTION = "Automate library publication"
 private const val FUNCTIONAL_TO_IMPERATIVE_DESCRIPTION = "Transform functional wat to write reactor code to imperative"
@@ -22,27 +23,13 @@ enum class PortfolioCase(
     fun toUri() = name.replace("_", "-").lowercase()
 
     companion object {
-        fun fromUri(uri: String): Maybe<PortfolioCase> {
+        fun fromUri(uri: String): Either<IllegalStateException, PortfolioCase> {
             return try {
                 val portfolioCase = PortfolioCase.valueOf(uri.replace("-", "_").uppercase())
-                Maybe.result(portfolioCase)
+                Either.Right(portfolioCase)
             } catch (e: IllegalStateException) {
-                Maybe.error()
+                Either.Left(e)
             }
         }
     }
-}
-
-// todo use ArrowKt
-class Maybe<T>(
-    val result: T?,
-    val error: Error?
-) {
-    object Error
-
-    companion object {
-        fun <T> result(result: T) = Maybe<T>(result, null)
-        fun <T> error() = Maybe<T>(null, Error)
-    }
-
 }

@@ -20,7 +20,6 @@ kotlin {
                 testLogging.showStandardStreams = true
                 useKarma {
                     useChromeHeadless()
-//                    useFirefox()
                 }
             }
         }
@@ -32,6 +31,7 @@ kotlin {
                 implementation(compose.web.core)
                 implementation(compose.runtime)
                 implementation("app.softwork:routing-compose:0.2.11")
+                implementation("io.arrow-kt:arrow-core:1.1.4")
             }
         }
         val jsTest by getting {
