@@ -3,8 +3,8 @@ package application
 import application.ApplicationLayoutStyles.baseLayout
 import androidx.compose.runtime.Composable
 import application.content.ViewContainer
-import application.footer.FooterContent
-import application.header.Navigation
+import application.footer.FooterPanel
+import application.header.NavigationPanel
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Footer as DomFooter
 import org.jetbrains.compose.web.dom.Header as DomHeader
@@ -14,8 +14,8 @@ import org.jetbrains.compose.web.dom.Main as DomMain
 fun Application() {
     BaseLayout {
         Header()
-        Main()
-        Footer()
+//        Main()
+//        Footer()
     }
 }
 
@@ -30,7 +30,7 @@ private fun BaseLayout(content: @Composable () -> Unit) {
 
 @Composable
 private fun Header() {
-    DomHeader({ style { ApplicationLayoutStyles.header } }) { Navigation() }
+    DomHeader({ style { ApplicationLayoutStyles.header } }) { NavigationPanel() }
 }
 
 @Composable
@@ -40,5 +40,5 @@ private fun Main() {
 
 @Composable
 private fun Footer() {
-    DomFooter({ style { ApplicationLayoutStyles.footer } }) { FooterContent() }
+    DomFooter({ style { ApplicationLayoutStyles.footer } }) { FooterPanel() }
 }

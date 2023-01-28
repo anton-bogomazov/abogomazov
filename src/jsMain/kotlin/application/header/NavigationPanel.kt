@@ -3,13 +3,13 @@ package application.header
 import androidx.compose.runtime.Composable
 import application.header.menu.Menu
 import application.header.menu.MenuOrientation
-import application.header.style.Header
+import application.header.style.NavigationPanelStyles
 import org.jetbrains.compose.web.dom.Nav
 
 @Composable
-fun Navigation() {
+fun NavigationPanel() {
     Nav({
-        classes(Header.navigationBar)
+        classes(NavigationPanelStyles.navigationBar)
     }) {
         Menu(MenuOrientation.HORIZONTAL)
     }

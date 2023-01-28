@@ -1,6 +1,6 @@
 package application.content.view
 
-import GlobalStyles.selectedText
+import GlobalStyles.invertedText
 import androidx.compose.runtime.Composable
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.*
@@ -34,7 +34,7 @@ fun AboutMe() {
                     Text("my name is")
                     Br()
                 }
-                Span({ classes(selectedText) }) { Text("Anton Bogomazov") }
+                Span({ classes(invertedText) }) { Text("Anton Bogomazov") }
             }
         }
         Span({
