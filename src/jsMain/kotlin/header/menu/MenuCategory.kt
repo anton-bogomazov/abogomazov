@@ -1,5 +1,6 @@
 package header.menu
 
+import BaseStyleSheet.linkHover
 import BaseStyleSheet.selectedText
 import androidx.compose.runtime.Composable
 import header.style.Menu.menuCategoryText
@@ -47,7 +48,7 @@ private fun MenuCategoryText(content: String) {
 @Composable
 private fun MenuCategoryLink(content: String, link: String, callback: (MenuCategory) -> Unit) {
     A(attrs = {
-        classes(menuCategoryText)
+        classes(menuCategoryText, linkHover)
         onClick { callback(MenuCategory.valueOf(content.uppercase())) } }, href = link) {
         Text(content)
     }

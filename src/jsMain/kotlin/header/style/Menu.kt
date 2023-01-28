@@ -10,12 +10,6 @@ object Menu : StyleSheet(BaseStyleSheet) {
 
     val horizontalMenu by style {
         display(DisplayStyle.Flex)
-
-        media(mediaMaxWidth(menuSwitchWidth)) {
-            self style {
-                display(DisplayStyle.None)
-            }
-        }
     }
 
     val verticalMenu by style {

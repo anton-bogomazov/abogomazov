@@ -7,6 +7,10 @@ object BaseStyleSheet : StyleSheet() {
         color(Color.white)
     }
 
+    val linkHover by style {
+        self + hover style { color(Color.darkgray) }
+    }
+
     init {
         universal style {
             fontFamily("monospace")
@@ -16,8 +20,6 @@ object BaseStyleSheet : StyleSheet() {
 
             margin(0.px)
 
-            // fixme all text is inherit this property wtf
-//            selector("a").style { hover { color(Color.darkgray) } }
         }
     }
 }

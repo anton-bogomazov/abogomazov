@@ -1,7 +1,6 @@
 package header
 
 import androidx.compose.runtime.*
-import header.menu.BurgerButton
 import header.menu.Menu
 import header.menu.MenuOrientation
 import header.style.Header.navigationBar
@@ -13,6 +12,5 @@ fun Header() {
         classes(navigationBar)
     }) {
         Menu(MenuOrientation.HORIZONTAL)
-        BurgerButton()
     }
 }
