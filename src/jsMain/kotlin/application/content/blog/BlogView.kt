@@ -1,7 +1,7 @@
 package application.content.blog
 
 import androidx.compose.runtime.*
-import httpClient.getAllPosts
+import httpClient.BlogApi
 import kotlinx.browser.window
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.web.css.DisplayStyle
@@ -16,7 +16,7 @@ fun BlogView() {
     val coroutineScope = rememberCoroutineScope()
     var postListDto by remember { mutableStateOf(BlogPostListDto(emptyList())) }
 
-    coroutineScope.launch { postListDto = getAllPosts() }
+    coroutineScope.launch { postListDto = BlogApi.getAllPosts() }
 
     Section({
         style {

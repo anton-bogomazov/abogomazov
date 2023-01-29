@@ -1,8 +1,7 @@
 package application.content.blog
 
 import androidx.compose.runtime.*
-import httpClient.getAllPosts
-import httpClient.getPost
+import httpClient.BlogApi
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.web.css.DisplayStyle
 import org.jetbrains.compose.web.css.boxSizing
@@ -17,7 +16,7 @@ fun BlogPostView(title: String) {
     val coroutineScope = rememberCoroutineScope()
     var post by remember { mutableStateOf(BlogPostDto.empty()) }
 
-    coroutineScope.launch { post = getPost(title) }
+    coroutineScope.launch { post = BlogApi.getPost(title) }
 
     Section({
         style {
@@ -32,8 +31,3 @@ fun BlogPostView(title: String) {
         Text(post.content)
     }
 }
-
-private fun getBlogPost(title: String) = listOf(
-    BlogPostDto("first_title", "first_description", "first content"),
-    BlogPostDto("second_title", "second_description", "second content"),
-).filter { it.title == title }.singleOrNull() ?: BlogPostDto("empty", "empty", "empty")
