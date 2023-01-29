@@ -1,7 +1,7 @@
 package application
 
-import application.ApplicationLayoutStyles.baseLayout
 import androidx.compose.runtime.Composable
+import application.ApplicationLayoutStyles.baseLayout
 import application.content.ViewContainer
 import application.footerPanel.FooterPanel
 import application.navigationPanel.NavigationPanel

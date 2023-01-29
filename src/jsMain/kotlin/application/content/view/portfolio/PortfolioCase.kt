@@ -20,7 +20,7 @@ enum class PortfolioCase(
     enum class Tag { DX }
     enum class Company { DOMCLICK, BEELINE, TRADESHIFT, PERSONAL }
 
-    fun toUri() = name.replace("_", "-").lowercase()
+    fun toUri(origin: String) = "$origin/#portfolio/${name.replace("_", "-").lowercase()}"
 
     companion object {
         fun fromUri(uri: String): Either<IllegalStateException, PortfolioCase> {

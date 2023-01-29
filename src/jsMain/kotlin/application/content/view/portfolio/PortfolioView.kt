@@ -22,7 +22,7 @@ fun PortfolioView() {
 @Composable
 private fun PortfolioCaseSection(case: PortfolioCase) {
     Div({
-        onClick { window.location.assign(portfolioCaseLink(case.toUri())) }
+        onClick { window.location.assign(case.toUri(window.location.origin)) }
         style {
             // todo hover style
             padding(16.px)
@@ -43,5 +43,3 @@ private fun PortfolioCaseSection(case: PortfolioCase) {
         Span { Text(case.description) }
     }
 }
-
-private fun portfolioCaseLink(caseUri: String) = "${window.location.origin}/#portfolio/$caseUri"
