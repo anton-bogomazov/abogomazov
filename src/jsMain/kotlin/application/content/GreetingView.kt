@@ -1,4 +1,4 @@
-package application.content.view
+package application.content
 
 import GlobalStyles.invertedText
 import androidx.compose.runtime.Composable

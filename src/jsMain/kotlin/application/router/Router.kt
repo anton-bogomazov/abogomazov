@@ -1,15 +1,16 @@
-package application.content.router
+package application.router
 
 import androidx.compose.runtime.Composable
 import app.softwork.routingcompose.HashRouter
-import application.content.view.AboutMeView
-import application.content.view.GreetingView
-import application.content.view.PageNotFoundView
-import application.content.view.blog.BlogView
-import application.content.view.cv.CvView
-import application.content.view.portfolio.PortfolioCase
-import application.content.view.portfolio.PortfolioCaseView
-import application.content.view.portfolio.PortfolioView
+import application.content.AboutMeView
+import application.content.GreetingView
+import application.content.PageNotFoundView
+import application.content.blog.BlogPostView
+import application.content.blog.BlogView
+import application.content.cv.CvView
+import application.content.portfolio.PortfolioCase
+import application.content.portfolio.PortfolioCaseView
+import application.content.portfolio.PortfolioView
 
 @Composable
 fun routeOnView() {
@@ -29,7 +30,7 @@ fun routeOnView() {
         }
         route(BLOG_VIEW_ROUTE) {
             route(ROOT_ROUTE) { BlogView() }
-            int { /* todo handle blog post id */ }
+            string { postTitle -> BlogPostView(postTitle) }
             noMatch { PageNotFoundView() }
         }
         noMatch { PageNotFoundView() }

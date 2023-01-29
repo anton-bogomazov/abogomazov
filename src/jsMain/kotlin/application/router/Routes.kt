@@ -1,4 +1,4 @@
-package application.content.router
+package application.router
 
 const val INITIAL_PATH = "/"
 

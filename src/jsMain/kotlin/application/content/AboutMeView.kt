@@ -1,4 +1,4 @@
-package application.content.view
+package application.content
 
 import androidx.compose.runtime.Composable
 import org.jetbrains.compose.web.css.*

@@ -1,4 +1,4 @@
-package application.content.view.portfolio
+package application.content.portfolio
 
 import androidx.compose.runtime.Composable
 import kotlinx.browser.window

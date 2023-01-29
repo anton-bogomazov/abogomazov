@@ -1,8 +1,8 @@
-package application.content.view.portfolio
+package application.content.portfolio
 
 import androidx.compose.runtime.Composable
-import application.content.view.portfolio.case.AutomatingLibraryPublicationCase
-import application.content.view.portfolio.case.FunctionalToImperativeCase
+import application.content.portfolio.case.AutomatingLibraryPublicationCase
+import application.content.portfolio.case.FunctionalToImperativeCase
 import arrow.core.Either
 
 private const val AUTOMATING_LIBRARY_PUBLICATION_DESCRIPTION = "Automate library publication"

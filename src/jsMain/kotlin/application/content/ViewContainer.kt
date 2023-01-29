@@ -1,7 +1,7 @@
 package application.content
 
 import androidx.compose.runtime.Composable
-import application.content.router.routeOnView
+import application.router.routeOnView
 import application.content.styles.ViewContainerStyles.viewContainer
 import org.jetbrains.compose.web.dom.Div
 

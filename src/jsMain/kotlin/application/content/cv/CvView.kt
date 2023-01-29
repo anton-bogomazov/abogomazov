@@ -1,4 +1,4 @@
-package application.content.view.cv
+package application.content.cv
 
 import androidx.compose.runtime.Composable
 import org.jetbrains.compose.web.css.DisplayStyle
