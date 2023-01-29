@@ -24,7 +24,6 @@ private fun PortfolioCaseSection(case: PortfolioCase) {
     Div({
         onClick { window.location.assign(case.toUri(window.location.origin)) }
         style {
-            // todo hover style
             padding(16.px)
             border {
                 left(10.px)

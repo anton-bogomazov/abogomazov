@@ -4,7 +4,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class BlogPostDto(
-    val title: String, // unique, primary_key, no emoji!
+    val title: String,
     val description: String,
     val content: String
 ) {

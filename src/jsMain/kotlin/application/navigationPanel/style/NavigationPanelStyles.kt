@@ -5,7 +5,6 @@ import org.jetbrains.compose.web.css.*
 
 object NavigationPanelStyles : StyleSheet(GlobalStyles) {
 
-    // todo unused now. maybe that should be in menu styles. Decide after implementing vertical menu
     val menuOrientationSwitchWidth = 640.px
     val panelHeight = 80.px
 

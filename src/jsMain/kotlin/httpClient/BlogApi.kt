@@ -8,8 +8,6 @@ import kotlinx.serialization.json.Json
 
 object BlogApi {
 
-    // fixme add param "no-content", that one to heavyweight
-    // fixme for some reason ktor can't find deserizalizer
     suspend fun getAllPosts(): BlogPostListDto {
         val serializer = BlogPostListDto.serializer()
         val response = Json.decodeFromString(serializer, client.get("$BLOG_API_HOST/$POST_PATH").body())

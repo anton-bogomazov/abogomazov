@@ -6,7 +6,6 @@ object GlobalStyles : StyleSheet() {
         color(Color.white)
     }
 
-    // fixme it shouldn't be here and change the color
     val hoveredLink by style {
         self + hover style { color(Color.lightgray) }
     }

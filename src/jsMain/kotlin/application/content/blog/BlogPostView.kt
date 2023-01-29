@@ -12,7 +12,6 @@ import org.jetbrains.compose.web.dom.Text
 
 @Composable
 fun BlogPostView(title: String) {
-    // todo if there is no post for that title (404), show page not found
     val coroutineScope = rememberCoroutineScope()
     var post by remember { mutableStateOf(BlogPostDto.empty()) }
 
