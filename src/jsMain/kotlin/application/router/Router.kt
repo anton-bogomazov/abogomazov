@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 import app.softwork.routingcompose.HashRouter
 import application.content.AboutMeView
 import application.content.GreetingView
-import application.content.PageNotFoundView
+import application.content.pageNotFound.PageNotFoundView
 import application.content.blog.BlogPostView
 import application.content.blog.BlogView
 import application.content.cv.CvView
