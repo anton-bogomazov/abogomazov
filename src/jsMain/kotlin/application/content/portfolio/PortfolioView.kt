@@ -1,44 +1,12 @@
 package application.content.portfolio
 
 import androidx.compose.runtime.Composable
-import kotlinx.browser.window
-import org.jetbrains.compose.web.css.*
-import org.jetbrains.compose.web.css.Color.black
-import org.jetbrains.compose.web.dom.*
+import application.content.portfolio.style.PortfolioView.cardGrid
+import org.jetbrains.compose.web.dom.Div
 
 @Composable
 fun PortfolioView() {
-    Div({
-        style {
-            display(DisplayStyle.Grid)
-            boxSizing("border-box")
-            gridTemplateColumns("200px 200px 200px")
-        }
-    }) {
-        PortfolioCase.values().forEach { PortfolioCaseSection(it) }
-    }
-}
-
-@Composable
-private fun PortfolioCaseSection(case: PortfolioCase) {
-    Div({
-        onClick { window.location.assign(case.toUri(window.location.origin)) }
-        style {
-            padding(16.px)
-            border {
-                left(10.px)
-            }
-            display(DisplayStyle.Flex)
-            flexDirection(FlexDirection.Column)
-
-            border {
-                style(LineStyle.Solid)
-                color(black)
-            }
-            borderWidth(2.px, 2.px, 2.px, 20.px)
-        }
-    }) {
-        Span({ style { fontWeight("bold") } }) { Text(case.name.lowercase()) }
-        Span { Text(case.description) }
+    Div({ classes(cardGrid) }) {
+        PortfolioCase.values().forEach { PortfolioCaseCard(it) }
     }
 }
