@@ -8,6 +8,9 @@ import kotlinx.serialization.json.Json
 
 object BlogApi {
 
+    private const val BLOG_API_HOST = "https://0e81cde8-7095-4850-897c-2f285426ef5a.mock.pstmn.io"
+    private const val POST_PATH = "post"
+
     suspend fun getAllPosts(): BlogPostListDto {
         val serializer = BlogPostListDto.serializer()
         val response = Json.decodeFromString(serializer, client.get("$BLOG_API_HOST/$POST_PATH").body())
