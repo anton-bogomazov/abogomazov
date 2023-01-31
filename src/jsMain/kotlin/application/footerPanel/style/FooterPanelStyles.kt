@@ -1,6 +1,7 @@
 package application.footerPanel.style
 
 import GlobalStyles
+import application.navigationPanel.style.NavigationPanelStyles
 import org.jetbrains.compose.web.css.*
 
 object FooterPanelStyles : StyleSheet(GlobalStyles) {
@@ -30,6 +31,10 @@ object FooterPanelStyles : StyleSheet(GlobalStyles) {
         display(DisplayStyle.Flex)
         flexDirection(FlexDirection.Column)
         alignItems(AlignItems.Center)
+        justifyContent(JustifyContent.Center)
+
+        height(NavigationPanelStyles.panelHeight)
+        padding(0.px, 40.px)
     }
 
 }
