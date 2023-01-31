@@ -1,5 +1,6 @@
 package application.router
 
+import IS_BLOG_ENABLED
 import androidx.compose.runtime.Composable
 import app.softwork.routingcompose.HashRouter
 import application.content.AboutMeView
@@ -28,10 +29,12 @@ fun routeOnView() {
             }
             noMatch { PageNotFoundView() }
         }
-        route(BLOG_VIEW_ROUTE) {
-            route(ROOT_ROUTE) { BlogView() }
-            string { postTitle -> BlogPostView(postTitle) }
-            noMatch { PageNotFoundView() }
+        if (IS_BLOG_ENABLED) {
+            route(BLOG_VIEW_ROUTE) {
+                route(ROOT_ROUTE) { BlogView() }
+                string { postTitle -> BlogPostView(postTitle) }
+                noMatch { PageNotFoundView() }
+            }
         }
         noMatch { PageNotFoundView() }
     }

@@ -1,5 +1,7 @@
 package application.navigationPanel.menu
 
+import IS_BLOG_ENABLED
+
 enum class MenuCategory {
     ROOT,
     ABOUT_ME,
@@ -18,6 +20,12 @@ enum class MenuCategory {
             } catch (e: IllegalStateException) {
                 ROOT
             }
+
+        fun getCategories() =
+            MenuCategory.values()
+                .subtract(
+                    if (!IS_BLOG_ENABLED) setOf(BLOG) else setOf()
+                )
     }
 
     fun hash() = "#${name.lowercase().replace("_", "-")}"

@@ -2,6 +2,7 @@ package application.navigationPanel.menu
 
 import GlobalStyles.hoveredLink
 import GlobalStyles.invertedText
+import IS_BLOG_ENABLED
 import androidx.compose.runtime.*
 import application.navigationPanel.style.MenuStyles.horizontalMenu
 import application.navigationPanel.style.MenuStyles.menuItem
@@ -24,9 +25,11 @@ fun Menu(orientation: MenuOrientation) {
             MenuOrientation.VERTICAL -> classes(verticalMenu)
         }
     }) {
-        MenuCategory.values().forEach {
-            MenuItem(it, it == selectedCategory) { category -> selectedCategory = category }
-        }
+        MenuCategory.getCategories()
+            .filter { !IS_BLOG_ENABLED && it != MenuCategory.BLOG }
+            .forEach {
+                MenuItem(it, it == selectedCategory) { category -> selectedCategory = category }
+            }
     }
 }
 
