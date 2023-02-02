@@ -4,9 +4,6 @@ import org.jetbrains.compose.web.css.*
 
 object GlobalStyles : StyleSheet() {
 
-    val PANEL_HEIGHT = 80.px
-    val PANEL_PADDING = 40.px
-
     val invertedText by style {
         backgroundColor(Color.black)
         color(Color.white)
@@ -15,19 +12,11 @@ object GlobalStyles : StyleSheet() {
     val flexRow by style {
         display(DisplayStyle.Flex)
         flexDirection(FlexDirection.Row)
-        alignItems(AlignItems.Center)
     }
 
     val flexColumn by style {
         display(DisplayStyle.Flex)
         flexDirection(FlexDirection.Column)
-        alignItems(AlignItems.Center)
-    }
-
-    val panel by style {
-        height(PANEL_HEIGHT)
-        paddingLeft(PANEL_PADDING)
-        paddingRight(PANEL_PADDING)
     }
 
     init {

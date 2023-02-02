@@ -1,44 +1,31 @@
 package com.abogomazov.application
 
 import androidx.compose.runtime.Composable
-import com.abogomazov.application.ApplicationLayoutStyles.baseLayout
+import com.abogomazov.GlobalStyles
 import com.abogomazov.application.content.ViewContainer
 import com.abogomazov.application.footerPanel.FooterPanel
 import com.abogomazov.application.navigationPanel.NavigationPanel
+import org.jetbrains.compose.web.css.flex
+import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.Div
-import org.jetbrains.compose.web.dom.Footer as DomFooter
-import org.jetbrains.compose.web.dom.Header as DomHeader
-import org.jetbrains.compose.web.dom.Main as DomMain
+import org.jetbrains.compose.web.dom.Footer
+import org.jetbrains.compose.web.dom.Header
+import org.jetbrains.compose.web.dom.Main
 
 @Composable
 fun Application() {
     BaseLayout {
-        Header()
-        Main()
-        Footer()
+        Header({ style { flex(0, 0) } }) { NavigationPanel.render() }
+        Main({ style { flex(1) } }) { ViewContainer() }
+        Footer({ style { flex(0, 0) } }) { FooterPanel.render() }
     }
 }
 
 @Composable
 private fun BaseLayout(content: @Composable () -> Unit) {
     Div({
-        classes(baseLayout)
+        classes(GlobalStyles.flexColumn)
     }) {
         content()
     }
-}
-
-@Composable
-private fun Header() {
-    DomHeader({ style { ApplicationLayoutStyles.header } }) { NavigationPanel.render() }
-}
-
-@Composable
-private fun Main() {
-    DomMain({ style { ApplicationLayoutStyles.main } }) { ViewContainer() }
-}
-
-@Composable
-private fun Footer() {
-    DomFooter({ style { ApplicationLayoutStyles.footer } }) { FooterPanel.render() }
 }

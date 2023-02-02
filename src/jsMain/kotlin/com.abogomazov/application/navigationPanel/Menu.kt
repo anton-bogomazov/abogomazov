@@ -19,6 +19,7 @@ object Menu {
         Div({
             classes(GlobalStyles.flexRow)
             style {
+                alignItems(AlignItems.Center)
                 justifyContent(JustifyContent.FlexEnd)
 
                 fontWeight("bold")

@@ -1,9 +1,11 @@
 package com.abogomazov.application.footerPanel
 
 import androidx.compose.runtime.Composable
-import com.abogomazov.GlobalStyles.flexColumn
-import com.abogomazov.GlobalStyles.panel
+import com.abogomazov.GlobalStyles
+import com.abogomazov.application.ApplicationLayoutStyles
+import org.jetbrains.compose.web.css.AlignItems
 import org.jetbrains.compose.web.css.JustifyContent
+import org.jetbrains.compose.web.css.alignItems
 import org.jetbrains.compose.web.css.justifyContent
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Text
@@ -14,8 +16,11 @@ object FooterPanel {
 
     @Composable fun render() {
         Div({
-            classes(panel, flexColumn)
-            style { justifyContent(JustifyContent.Center) }
+            classes(ApplicationLayoutStyles.panel, GlobalStyles.flexColumn)
+            style {
+                justifyContent(JustifyContent.Center)
+                alignItems(AlignItems.Center)
+            }
         }) {
             SocialMediaIconsPanel.render()
             Text(COPYRIGHT_TEXT)
