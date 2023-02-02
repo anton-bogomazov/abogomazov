@@ -1,8 +1,9 @@
-package com.abogomazov.application.navigationPanel
+package com.abogomazov.application.headerNavigation
 
 import com.abogomazov.GlobalStyles
 import com.abogomazov.WindowContext
 import androidx.compose.runtime.*
+import com.abogomazov.application.ApplicationLayoutStyles
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.Div
@@ -17,7 +18,7 @@ object Menu {
         var selectedCategory by remember { mutableStateOf(Category.from(WindowContext.hash())) }
 
         Div({
-            classes(GlobalStyles.flexRow)
+            classes(ApplicationLayoutStyles.panel, GlobalStyles.flexRow)
             style {
                 alignItems(AlignItems.Center)
                 justifyContent(JustifyContent.FlexEnd)
@@ -34,17 +35,13 @@ object Menu {
     private class Item(val category: Category) {
 
         companion object {
-            private val MARGIN = 8.px
-            private val PADDING = 2.px
+            private val PADDING = 10.px
         }
 
         @Composable fun render(selected: Boolean = false, callback: (Category) -> Unit) {
             A(attrs = {
                 if (selected) classes(GlobalStyles.invertedText)
-                style {
-                    margin(MARGIN)
-                    padding(PADDING)
-                }
+                style { padding(PADDING) }
                 onClick { callback(category) } }, href = category.hash()
             ) { Text(category.lowercase()) }
         }

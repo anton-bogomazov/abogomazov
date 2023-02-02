@@ -1,4 +1,4 @@
-package com.abogomazov.application.footerPanel
+package com.abogomazov.application.footer
 
 import androidx.compose.runtime.Composable
 import com.abogomazov.GlobalStyles
