@@ -23,7 +23,7 @@ object GlobalStyles : StyleSheet() {
             color(Color.black)
             textDecoration("none")
 
-            "a" style { hover style { color(Color.lightgray) } }
+            type("a:hover") style { color(Color.lightgray) }
 
             margin(0.px)
         }
