@@ -40,5 +40,5 @@ private fun Main() {
 
 @Composable
 private fun Footer() {
-    DomFooter({ style { ApplicationLayoutStyles.footer } }) { FooterPanel() }
+    DomFooter({ style { ApplicationLayoutStyles.footer } }) { FooterPanel.render() }
 }
