@@ -1,4 +1,4 @@
-package com.abogomazov.application.router
+package com.abogomazov.application
 
 import com.abogomazov.IS_BLOG_ENABLED
 import androidx.compose.runtime.Composable
@@ -13,15 +13,16 @@ import com.abogomazov.application.content.portfolio.PortfolioCase
 import com.abogomazov.application.content.portfolio.PortfolioCaseView
 import com.abogomazov.application.content.portfolio.PortfolioView
 
-@Composable
-fun routeOnView() {
+const val INITIAL_PATH = "/"
+
+@Composable fun routeOnView() {
     HashRouter(initPath = INITIAL_PATH) {
-        route(ROOT_ROUTE) { GreetingView() }
-        route(ROOT_VIEW_ROUTE) { GreetingView() }
-        route(ABOUT_ME_VIEW_ROUTE) { AboutMeView() }
-        route(CV_VIEW_ROUTE) { CvView() }
-        route(PORTFOLIO_VIEW_ROUTE) {
-            route(ROOT_ROUTE) { PortfolioView() }
+        route(INITIAL_PATH) { GreetingView() }
+        route(Category.ROOT.path()) { GreetingView() }
+        route(Category.ABOUT_ME.path()) { AboutMeView() }
+        route(Category.CV.path()) { CvView() }
+        route(Category.PORTFOLIO.path()) {
+            route(INITIAL_PATH) { PortfolioView() }
             string { uri ->
                 PortfolioCase.fromUri(uri)
                     .map { case -> PortfolioCaseView(case) }
@@ -30,8 +31,8 @@ fun routeOnView() {
             noMatch { PageNotFoundView() }
         }
         if (IS_BLOG_ENABLED) {
-            route(BLOG_VIEW_ROUTE) {
-                route(ROOT_ROUTE) { BlogView() }
+            route(Category.BLOG.path()) {
+                route(INITIAL_PATH) { BlogView() }
                 string { postTitle -> BlogPostView(postTitle) }
                 noMatch { PageNotFoundView() }
             }
