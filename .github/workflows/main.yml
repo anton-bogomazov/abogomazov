@@ -26,6 +26,12 @@ jobs:
           key: '${{ runner.os }}-primes'
       - name: 'Build Kotlin Compose/Web SPA'
         run: './gradlew jsBrowserDistribution'
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v3.1.2
+        with:
+          name: site-pages
+          path: /cache/site
+
   deploy:
     needs: build
     runs-on: 'macos-latest'
@@ -33,9 +39,14 @@ jobs:
       GITHUB_ACTOR: '${{ github.actor }}'
       GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
     steps:
-      - name: 'Deploy to GitHub Pages'
+      - name: Download a Build Artifact
+        uses: actions/download-artifact@v3.0.2
+        with:
+          name: site-pages
+          path: /cache/site
+      - name: Deploy to GitHub Pages
         uses: 'JamesIves/github-pages-deploy-action@v4.4.0'
         with:
-          folder: 'build/distributions'
+          folder: /cache/site
           single-commit: true
           force: true
