@@ -6,12 +6,13 @@ on:
 
 jobs:
   build:
-    runs-on: 'macos-latest'
+    runs-on: 'ubuntu-latest'
     env:
       GITHUB_ACTOR: '${{ github.actor }}'
       GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
     steps:
-      - uses: 'actions/checkout@v2'
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
       - run: 'git fetch --prune --unshallow --tags'
       - name: 'Set up JDK 11'
         uses: 'actions/setup-java@v2'
@@ -34,19 +35,19 @@ jobs:
 
   deploy:
     needs: build
-    runs-on: 'macos-latest'
+    runs-on: 'ubuntu-latest'
     env:
       GITHUB_ACTOR: '${{ github.actor }}'
       GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
     steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
       - name: Download a Build Artifact
         uses: actions/download-artifact@v3.0.2
         with:
           name: site-pages
           path: build/distributions
       - name: Deploy to GitHub Pages
-        uses: 'JamesIves/github-pages-deploy-action@v4.4.0'
+        uses: 'JamesIves/github-pages-deploy-action@v4.4.1'
         with:
           folder: build/distributions
-          single-commit: true
-          force: true
