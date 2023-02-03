@@ -1,0 +1,23 @@
+name: 'Push to `main` (Create Release)'
+
+on:
+  push:
+    branches: ['main']
+
+jobs:
+  buildSiteAndPushToGithubPages:
+    runs-on: 'macos-latest'
+    env:
+      GITHUB_ACTOR: '${{ github.actor }}'
+      GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+    steps:
+      - uses: 'actions/checkout@v2'
+      - run: 'git fetch --prune --unshallow --tags'
+      - name: 'Build Kotlin Compose/Web SPA'
+        run: './gradlew jsBrowserDistribution'
+      - name: 'Deploy to GitHub Pages'
+        uses: 'JamesIves/github-pages-deploy-action@v4.4.0'
+        with:
+          folder: 'build/distributions'
+          single-commit: true
+          force: true
