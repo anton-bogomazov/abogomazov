@@ -1,11 +1,11 @@
-name: 'Push to `main` (Create Release)'
+name: 'Build and Deploy'
 
 on:
   push:
     branches: ['ci-1']
 
 jobs:
-  buildSiteAndPushToGithubPages:
+  build:
     runs-on: 'macos-latest'
     env:
       GITHUB_ACTOR: '${{ github.actor }}'
@@ -26,6 +26,13 @@ jobs:
           key: '${{ runner.os }}-primes'
       - name: 'Build Kotlin Compose/Web SPA'
         run: './gradlew jsBrowserDistribution'
+  deploy:
+    needs: build
+    runs-on: 'macos-latest'
+    env:
+      GITHUB_ACTOR: '${{ github.actor }}'
+      GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+    steps:
       - name: 'Deploy to GitHub Pages'
         uses: 'JamesIves/github-pages-deploy-action@v4.4.0'
         with:
