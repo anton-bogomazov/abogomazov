@@ -30,7 +30,7 @@ jobs:
         uses: actions/upload-artifact@v3.1.2
         with:
           name: site-pages
-          path: /cache/site
+          path: build/distributions
 
   deploy:
     needs: build
@@ -43,10 +43,10 @@ jobs:
         uses: actions/download-artifact@v3.0.2
         with:
           name: site-pages
-          path: /cache/site
+          path: build/distributions
       - name: Deploy to GitHub Pages
         uses: 'JamesIves/github-pages-deploy-action@v4.4.0'
         with:
-          folder: /cache/site
+          folder: build/distributions
           single-commit: true
           force: true
