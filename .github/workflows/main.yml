@@ -18,12 +18,6 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: 11
-      - name: "Cache SSG HTTP caches"
-        id: 'cache-http'
-        uses: 'actions/cache@v3'
-        with:
-          path: 'build/cache'
-          key: '${{ runner.os }}-primes'
       - name: 'Build Kotlin Compose/Web SPA'
         run: './gradlew jsBrowserDistribution'
       - name: Upload a Build Artifact
@@ -46,5 +40,4 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: 'JamesIves/github-pages-deploy-action@v4.4.1'
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           folder: build/distributions
