@@ -1,26 +1,26 @@
-name: 'Build and Deploy'
+name: Build and Deploy
 
 on:
   push:
-    branches: ['main']
+    branches: [main]
     
 permissions:
   contents: write
 
 jobs:
   build:
-    runs-on: 'ubuntu-latest'
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
-      - name: 'Set up JDK 11'
-        uses: 'actions/setup-java@v2'
+      - name: Set up JDK 🎛️
+        uses: actions/setup-java@v3
         with:
-          distribution: 'temurin'
-          java-version: 11
-      - name: 'Build Kotlin Compose/Web SPA'
-        run: './gradlew jsBrowserDistribution'
-      - name: Upload a Build Artifact
+          distribution: corretto
+          java-version: 17
+      - name: Build static site 🪚
+        run: ./gradlew jsBrowserDistribution
+      - name: Upload a Build Artifact ⤴️
         uses: actions/upload-artifact@v3.1.2
         with:
           name: site-pages
@@ -28,16 +28,16 @@ jobs:
 
   deploy:
     needs: build
-    runs-on: 'ubuntu-latest'
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
-      - name: Download a Build Artifact
+      - name: Download a Build Artifact ⤵️
         uses: actions/download-artifact@v3.0.2
         with:
           name: site-pages
           path: build/distributions
-      - name: Deploy to GitHub Pages
-        uses: 'JamesIves/github-pages-deploy-action@v4.4.1'
+      - name: Deploy to GitHub Pages 🚜
+        uses: JamesIves/github-pages-deploy-action@v4.4.1
         with:
           folder: build/distributions
