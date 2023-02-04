@@ -1,4 +1,4 @@
-package com.abogomazov.application.headerNavigation
+package com.abogomazov.application.menu
 
 import com.abogomazov.GlobalStyles
 import com.abogomazov.WindowContext
@@ -8,7 +8,7 @@ import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Text
-import com.abogomazov.application.Category
+import com.abogomazov.application.domain.Category
 
 object Menu {
 

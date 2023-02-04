@@ -1,4 +1,4 @@
-package com.abogomazov.application.socialMediaLink
+package com.abogomazov.application.domain.socialMediaLink
 
 const val EMAIL_LINK = "mailto:abogomazov.dev@gmail.com"
 const val GITHUB_LINK = "https://github.com/anton-bogomazov"

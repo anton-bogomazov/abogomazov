@@ -1,4 +1,4 @@
-package com.abogomazov.application.socialMediaLink
+package com.abogomazov.application.domain.socialMediaLink
 
 import androidx.compose.runtime.Composable
 import org.jetbrains.compose.web.css.height

@@ -1,4 +1,4 @@
-package com.abogomazov.application
+package com.abogomazov.application.domain
 
 import com.abogomazov.IS_BLOG_ENABLED
 import com.abogomazov.Uri
