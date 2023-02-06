@@ -2,8 +2,8 @@ package com.abogomazov.application.footer
 
 import androidx.compose.runtime.Composable
 import com.abogomazov.GlobalStyles
-import com.abogomazov.application.domain.socialMediaLink.Icon
-import com.abogomazov.application.domain.socialMediaLink.SocialMediaProperties
+import com.abogomazov.application.domain.Icon
+import com.abogomazov.property.cvContent
 import org.jetbrains.compose.web.attributes.ATarget
 import org.jetbrains.compose.web.attributes.target
 import org.jetbrains.compose.web.css.padding
@@ -17,8 +17,8 @@ object SocialMediaIconsPanel {
 
     @Composable fun render() {
         Div({ classes(GlobalStyles.flexRow) }) {
-            SocialMediaProperties.values()
-                .map { IconLink(it.uri, Icon(ICON_SIZE, it.iconPath)).render() }
+            // fixme contacts is a common content
+            cvContent.contacts.map { IconLink(it.link, Icon(ICON_SIZE, it.iconPath)).render() }
         }
     }
 

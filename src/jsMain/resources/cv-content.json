@@ -1,0 +1,142 @@
+{
+  "firstname": "Anton",
+  "surname": "Bogomazov",
+  "position": "Software Engineer",
+  "summary": "As a Software Engineer with 2 years of experience, I specialize in Kotlin and web development and have solid Java knowledge. I am a constant learner and enjoy delving into technical details. In my work, I follow the Boy Scout rule and offer solutions for improving code quality. I am rational and prioritize the benefits of the project over my own personal preferences. I also practice extreme programming techniques such as TDD and pair programming, and regularly provide feedback on my work through frequent PRs and detailed task decomposition.",
+  "contacts": [
+    {
+      "title": "email",
+      "username": "abogomazov.dev@gmail.com",
+      "link": "mailto:abogomazov.dev@gmail.com",
+      "icon_path": "icons/mail.svg"
+    },
+    {
+      "title": "website",
+      "username": "abogomazov.com",
+      "link": "https://www.abogomazov.com",
+      "icon_path": ""
+    },
+    {
+      "title": "github",
+      "username": "anton-bogomazov",
+      "link": "https://www.github.com/anton-bogomazov",
+      "icon_path": "icons/github.svg"
+    },
+    {
+      "title": "linkedin",
+      "username": "anton-p-bogomazov",
+      "link": "https://www.linkedin.com/in/anton-p-bogomazov",
+      "icon_path": "icons/linkedin.svg"
+    },
+    {
+      "title": "instagram",
+      "username": "so_so_ciable",
+      "link": "https://www.instagram.com/so_so_ciable",
+      "icon_path": "icons/instagram.svg"
+    },
+    {
+      "title": "telegram",
+      "username": "antonbogomazov",
+      "link": "https://www.t.me/antonbogomazov",
+      "icon_path": "icons/telegram.svg"
+    }
+  ],
+  "experience": [
+    {
+      "company": "Domclick",
+      "title": "Software Engineer",
+      "dateFrom": "Dec 2020",
+      "dateTo": "Apr 2022",
+      "description": "Domclick is a product technology company that specializes in high-load real estate projects. They offer a full-service solution from property selection to post-sales support, including mortgage and mutual settlement with the seller.",
+      "content": [
+        "Designed and implemented operations with pledge property and mortgage",
+        "Improved DX by automating everyday engineering tasks such as artifacts delivery",
+        "Tuned service performance to increase the availability",
+        "Shared knowledge and expertise with new team members",
+        "Explored experimental technologies, including reactor coroutines adapter, GraalVM, and native images, and assessed their compatibility with the current system."
+      ]
+    },
+    {
+      "company": "Beeline",
+      "title": "Lead Software Engineer",
+      "dateFrom": "Apr 2022",
+      "dateTo": "Aug 2022",
+      "description": "Beeline is one of the largest telecommunications brands in Russia.",
+      "content": [
+        "Led a team of 6 people in the development of a service for managing the personal data of clients, their agreements, and services",
+        "Delivered and deployed the first releases",
+        "Improved the CI/CD pipelines and streamlined team processes."
+      ]
+    },
+    {
+      "company": "Setronica",
+      "title": "Senior Software Engineer",
+      "dateFrom": "Aug 2022",
+      "dateTo": "Present",
+      "description": "Setronica is a software international development company. Their main focuses are custom software development and cloud solutions, including expertise in eCommerce, online marketplaces, ERP, and eProcurement.",
+      "content": [
+        "Analyzed the current system and suggested improvements to architecture and user experience, making it more stable.",
+        "Developed new features for B2B marketplace, including a supplier-buyer chat.",
+        "Maintained a mature system with multiple programming languages for both backend and frontend.",
+        "Shared best practices of designing systems and programming techniques."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "university": "University",
+      "program": "Computer Science",
+      "dateFrom": "Dec 2020",
+      "dateTo": "Apr 2022",
+      "description": "Nice"
+    },
+    {
+      "university": "University",
+      "program": "Computer Science",
+      "dateFrom": "Apr 2022",
+      "dateTo": "Aug 2022",
+      "description": "Awesome"
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "level": "B2",
+      "certificate": "https://certs.duolingo.com/d36b414a622b50738864833fdeaf7381"
+    },
+    {
+      "language": "Russian",
+      "level": "Native",
+      "certificate": null
+    },
+    {
+      "language": "German",
+      "level": "A1",
+      "certificate": null
+    }
+  ],
+  "projects": [
+    {
+      "name": "Algorithms and Data structures",
+      "description": "Algorithms and Data structures written in a human language"
+    },
+    {
+      "name": "NFT collection generator",
+      "description": "Core + plugins architecture around fun idea of generating images"
+    }
+  ],
+  "skills": [
+    {
+      "category": "Programming Languages",
+      "items": ["Java", "Kotlin", "F#"]
+    },
+    {
+      "category": "Frameworks",
+      "items": ["Spring", "Ktor", "Compose"]
+    },
+    {
+      "category": "Databases",
+      "items": ["Postgres", "Mongo"]
+    }
+  ]
+}
