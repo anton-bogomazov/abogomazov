@@ -11,15 +11,21 @@ object GlobalStyles : StyleSheet() {
     val HOVERED_LINK_COLOR = "#808080"
     val TILE_COLOR = "#4D4D4D"
 
-    val SMALL = 8.px
-    val REGULAR = 12.px
-    val LARGE = 18.px
-    val HUGE = 24.px
-    val GIANT = 36.px
+    val smaller = 8.px
+    val small = 12.px
+    val medium = 18.px
+    val large = 24.px
+    val larger = 36.px
 
     val invertedText by style {
         property("background-color", TEXT_COLOR)
         property("color", BACKGROUND_COLOR)
+    }
+
+    val list by style {
+        listStyleType("circle")
+
+        property("padding-inline-start", 20.px)
     }
 
     val flexRow by style {
@@ -32,8 +38,30 @@ object GlobalStyles : StyleSheet() {
         flexDirection(FlexDirection.Column)
     }
 
+    val flexCenter by style {
+        display(DisplayStyle.Flex)
+        justifyContent(JustifyContent.Center)
+        alignItems(AlignItems.Center)
+    }
+
     val monospace by style {
         property("font-family", "Roboto Mono, monospace")
+    }
+
+    val printable by style {
+        media("print") {
+            self style {
+                display(DisplayStyle.Block)
+            }
+        }
+    }
+
+    val nonPrintable by style {
+        media("print") {
+            self style {
+                display(DisplayStyle.None)
+            }
+        }
     }
 
     init {
@@ -45,7 +73,8 @@ object GlobalStyles : StyleSheet() {
 
             textDecoration("none")
 
-            type("a:hover") style { color(Color.lightgray) }
+            type("a:hover") style { property("color", HOVERED_LINK_COLOR) }
+            type("button:hover") style { property("background-color", HOVERED_LINK_COLOR) }
 
             margin(0.px)
         }

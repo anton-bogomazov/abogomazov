@@ -8,4 +8,6 @@ object WindowContext {
 
     fun width() = window.innerWidth
 
+    fun print() = window.print()
+
 }
