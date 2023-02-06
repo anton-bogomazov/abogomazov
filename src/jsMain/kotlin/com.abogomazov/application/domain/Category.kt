@@ -1,7 +1,7 @@
 package com.abogomazov.application.domain
 
-import com.abogomazov.IS_BLOG_ENABLED
 import com.abogomazov.Uri
+import com.abogomazov.property.featureFlags
 
 enum class Category {
     ROOT,
@@ -13,13 +13,23 @@ enum class Category {
     companion object {
         fun from(uri: Uri) =
             try {
-                // fixme intentional inconsistency: there is no IllegalStateException with disabled BLOG
+                // fixme intentional inconsistency: there is no IllegalStateException with disabled features
                 Category.valueOf(uri.toEnumCompatibleString())
             } catch (e: IllegalStateException) {
                 ROOT
             }
 
-        fun categories() = Category.values().subtract(if (!IS_BLOG_ENABLED) setOf(BLOG) else setOf())
+        fun categories(): Set<Category> {
+            val result = mutableSetOf<Category>()
+
+            if (featureFlags.isRootEnabled) result += ROOT
+            if (featureFlags.isAboutMeEnabled) result += ABOUT_ME
+            if (featureFlags.isCvEnabled) result += CV
+            if (featureFlags.isPortfolioEnabled) result += PORTFOLIO
+            if (featureFlags.isBlogEnabled) result += BLOG
+
+            return result
+        }
     }
 
     fun lowercase() = name.lowercase()
