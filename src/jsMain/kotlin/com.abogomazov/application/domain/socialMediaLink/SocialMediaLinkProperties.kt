@@ -1,10 +1,10 @@
 package com.abogomazov.application.domain.socialMediaLink
 
 const val EMAIL_LINK = "mailto:abogomazov.dev@gmail.com"
-const val GITHUB_LINK = "https://github.com/anton-bogomazov"
-const val LINKEDIN_LINK = "https://www.linkedin.com/in/anton-p-bogomazov/"
-const val INSTAGRAM_LINK = "https://instagram.com/so_so_ciable"
-const val TELEGRAM_LINK = "https://t.me/antonbogomazov"
+const val GITHUB_LINK = "https://www.github.com/anton-bogomazov"
+const val LINKEDIN_LINK = "https://www.linkedin.com/in/anton-p-bogomazov"
+const val INSTAGRAM_LINK = "https://www.instagram.com/so_so_ciable"
+const val TELEGRAM_LINK = "https://www.t.me/antonbogomazov"
 
 const val EMAIL_ICON_PATH = "icons/mail.svg"
 const val GITHUB_ICON_PATH = "icons/github.svg"
