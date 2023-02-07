@@ -1,0 +1,40 @@
+{
+  "web": [
+    {
+      "title": "email",
+      "username": "abogomazov.dev@gmail.com",
+      "link": "mailto:abogomazov.dev@gmail.com",
+      "icon_path": "icons/mail.svg"
+    },
+    {
+      "title": "website",
+      "username": "abogomazov.com",
+      "link": "https://www.abogomazov.com",
+      "icon_path": "icons/website.svg"
+    },
+    {
+      "title": "github",
+      "username": "anton-bogomazov",
+      "link": "https://www.github.com/anton-bogomazov",
+      "icon_path": "icons/github.svg"
+    },
+    {
+      "title": "linkedin",
+      "username": "anton-p-bogomazov",
+      "link": "https://www.linkedin.com/in/anton-p-bogomazov",
+      "icon_path": "icons/linkedin.svg"
+    },
+    {
+      "title": "instagram",
+      "username": "so_so_ciable",
+      "link": "https://www.instagram.com/so_so_ciable",
+      "icon_path": "icons/instagram.svg"
+    },
+    {
+      "title": "telegram",
+      "username": "antonbogomazov",
+      "link": "https://www.t.me/antonbogomazov",
+      "icon_path": "icons/telegram.svg"
+    }
+  ]
+}

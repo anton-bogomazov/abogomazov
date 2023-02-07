@@ -1,64 +1,52 @@
 package com.abogomazov.application.content
 
-import com.abogomazov.GlobalStyles.invertedText
 import androidx.compose.runtime.Composable
+import com.abogomazov.GlobalStyles
+import com.abogomazov.application.CenteredLayout
+import com.abogomazov.component.Renderable
+import com.abogomazov.property.PropertyContext
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.*
 
-@Composable
-fun GreetingView() {
-    Section({
-        style {
-            display(DisplayStyle.Block)
-            boxSizing("border-box")
-        }
-    }) {
-        AboutMe()
-        SiteGuide()
-    }
-}
+class GreetingView : Renderable {
 
-@Composable
-fun AboutMe() {
-    val aboutMe = "I'm a software engineer with a focus on web technologies. " +
-            "I strive to create systems that are not only reliable, but also easy to understand and maintain."
-    Div {
-        Header({
-            style {
-                fontSize(48.px)
-            }
-        }) {
-            Span { Text("Hello, ") }
-            Span {
-                Span {
-                    Text("my name is")
-                    Br()
+    @Composable override fun render() {
+        CenteredLayout {
+            Div({ classes(GlobalStyles.flexColumn) }) {
+                Span({
+                    classes(GlobalStyles.monospace, GlobalStyles.invertedText)
+                    style {
+                        fontSize(GlobalStyles.medium)
+                        fontStyle("italic")
+                        paddingBottom(12.px)
+                    }
+                }) { Text("The site is under construction"); Br(); Text("and may contain irrelevant content, bugs and broken layout.") }
+                Div({
+                    style {
+                        fontSize(GlobalStyles.larger)
+                        paddingBottom(12.px)
+                    }
+                }) {
+                    Span({
+                        classes(GlobalStyles.monospace)
+                        style { fontSize(GlobalStyles.large) }
+                    }) { Text("Hello, my name is"); Br() }
+                    Span({ classes(GlobalStyles.invertedText, GlobalStyles.monospace) }) { Text("Anton Bogomazov") }
                 }
-                Span({ classes(invertedText) }) { Text("Anton Bogomazov") }
-            }
-        }
-        Span({
-            style {
-                fontSize(24.px)
-            }
-        }) {
-            Text(aboutMe)
-        }
-    }
-}
+                Div({
+                    style {
+                        fontSize(GlobalStyles.large)
 
-@Composable
-fun SiteGuide() {
-    val guide = "Here, you'll find an overview of my professional background and experience in the \"about_me\" section, " +
-            "as well as my resume in the \"cv\" section. The \"portfolio\" showcases some of my past projects and " +
-            "the \"blog\" includes my thoughts and insights on various topics related to my field."
-    Div {
-        Header({
-            style {
-                fontSize(24.px)
+                        paddingBottom(12.px)
+                    }
+                }) { Text(PropertyContext.greetingContent.aboutMe) }
+                Div({
+                    style {
+                        fontSize(GlobalStyles.large)
+                    }
+                }) { Text(PropertyContext.greetingContent.siteGuide) }
             }
-        }) {
-            Text(guide)
         }
     }
+
 }

@@ -1,4 +1,4 @@
-package com.abogomazov
+package com.abogomazov.application.domain
 
 class Uri private constructor(private val uriString: String) {
 

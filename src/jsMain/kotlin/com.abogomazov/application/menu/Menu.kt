@@ -40,7 +40,7 @@ object Menu {
 
         @Composable fun render(selected: Boolean = false, callback: (Category) -> Unit) {
             A(attrs = {
-                if (selected) classes(GlobalStyles.invertedText)
+                if (selected) classes(GlobalStyles.invertedText, GlobalStyles.monospace)
                 style { padding(PADDING) }
                 onClick { callback(category) } }, href = category.hash()
             ) { Text(category.lowercase()) }

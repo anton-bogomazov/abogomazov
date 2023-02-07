@@ -2,39 +2,41 @@ package com.abogomazov.application
 
 import androidx.compose.runtime.Composable
 import app.softwork.routingcompose.HashRouter
-import com.abogomazov.IS_BLOG_ENABLED
 import com.abogomazov.application.content.AboutMeView
 import com.abogomazov.application.content.GreetingView
-import com.abogomazov.application.content.blog.BlogPostView
-import com.abogomazov.application.content.blog.BlogView
+import com.abogomazov.application.content.PageNotFoundView
 import com.abogomazov.application.content.cv.CvView
-import com.abogomazov.application.content.pageNotFound.PageNotFoundView
 import com.abogomazov.application.content.portfolio.PortfolioCase
 import com.abogomazov.application.content.portfolio.PortfolioCaseView
 import com.abogomazov.application.content.portfolio.PortfolioView
 import com.abogomazov.application.domain.Category
+import com.abogomazov.property.PropertyContext
 
 const val INITIAL_PATH = "/"
 
 @Composable fun routeOnView() {
     HashRouter(initPath = INITIAL_PATH) {
-        route(INITIAL_PATH) { GreetingView() }
-        route(Category.ROOT.path()) { GreetingView() }
-        route(Category.ABOUT_ME.path()) { AboutMeView() }
-        route(Category.CV.path()) { CvView() }
-        route(Category.PORTFOLIO.path()) {
-            route(INITIAL_PATH) { PortfolioView() }
-            string { uri ->
-                PortfolioCase.fromUri(uri)
-                    .map { case -> PortfolioCaseView(case) }
-                    .mapLeft { PortfolioView() }
-            }
-            noMatch { PageNotFoundView() }
+        route(INITIAL_PATH) { GreetingView().render() }
+        route(Category.ROOT.path()) { GreetingView().render() }
+        if (PropertyContext.featureFlags.isAboutMeEnabled) {
+            route(Category.ABOUT_ME.path()) { AboutMeView() }
         }
-        if (IS_BLOG_ENABLED) {
+        if (PropertyContext.featureFlags.isCvEnabled) {
+            route(Category.CV.path()) { CvView() }
+        }
+        if (PropertyContext.featureFlags.isPortfolioEnabled) {
+            route(Category.PORTFOLIO.path()) {
+                route(INITIAL_PATH) { PortfolioView() }
+                string { uri ->
+                    PortfolioCase.fromUri(uri)
+                        .map { case -> PortfolioCaseView(case) }
+                        .mapLeft { PortfolioView() }
+                }
+                noMatch { PageNotFoundView() }
+            }
+        }
+        if (PropertyContext.featureFlags.isBlogEnabled) {
             route(Category.BLOG.path()) {
-                route(INITIAL_PATH) { BlogView() }
-                string { postTitle -> BlogPostView(postTitle) }
                 noMatch { PageNotFoundView() }
             }
         }

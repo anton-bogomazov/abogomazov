@@ -5,7 +5,7 @@ import org.jetbrains.compose.web.css.*
 
 object ApplicationLayoutStyles : StyleSheet(GlobalStyles) {
 
-    private val PANEL_HEIGHT = 80.px
+    private val PANEL_HEIGHT = 10.vh
     private val PANEL_PADDING = 40.px
     private val VIEW_CONTAINER_PADDING = 20.px
 
