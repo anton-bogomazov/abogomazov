@@ -1,5 +1,6 @@
 package com.abogomazov
 
+import com.abogomazov.application.domain.Uri
 import kotlinx.browser.window
 
 object WindowContext {
