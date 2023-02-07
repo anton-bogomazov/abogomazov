@@ -42,10 +42,13 @@ object GlobalStyles : StyleSheet() {
         display(DisplayStyle.Flex)
         justifyContent(JustifyContent.Center)
         alignItems(AlignItems.Center)
+        flexDirection(FlexDirection.Column)
+
+        height(80.vh)
     }
 
     val monospace by style {
-        property("font-family", "Roboto Mono, monospace")
+        property("font-family", "'Roboto Mono', monospace")
     }
 
     val printable by style {

@@ -16,8 +16,8 @@ const val INITIAL_PATH = "/"
 
 @Composable fun routeOnView() {
     HashRouter(initPath = INITIAL_PATH) {
-        route(INITIAL_PATH) { GreetingView() }
-        route(Category.ROOT.path()) { GreetingView() }
+        route(INITIAL_PATH) { GreetingView().render() }
+        route(Category.ROOT.path()) { GreetingView().render() }
         if (PropertyContext.featureFlags.isAboutMeEnabled) {
             route(Category.ABOUT_ME.path()) { AboutMeView() }
         }
