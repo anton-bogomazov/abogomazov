@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 import com.abogomazov.GlobalStyles
 import com.abogomazov.application.domain.Icon
 import com.abogomazov.component.Renderable
-import com.abogomazov.property.cvContent
+import com.abogomazov.property.PropertyContext
 import org.jetbrains.compose.web.attributes.ATarget
 import org.jetbrains.compose.web.attributes.target
 import org.jetbrains.compose.web.css.*
@@ -24,7 +24,7 @@ object Contacts : Renderable {
                 justifyContent(JustifyContent.SpaceBetween)
             }
         }) {
-            cvContent.contacts.forEach {
+            PropertyContext.contacts.web.forEach {
                 Link(it.link, it.title, Icon(ICON_SIZE, it.iconPath)).render()
             }
         }

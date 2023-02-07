@@ -2,6 +2,7 @@ package com.abogomazov.application.content
 
 import com.abogomazov.GlobalStyles.invertedText
 import androidx.compose.runtime.Composable
+import com.abogomazov.property.PropertyContext
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.*
 
@@ -20,8 +21,6 @@ fun GreetingView() {
 
 @Composable
 fun AboutMe() {
-    val aboutMe = "I'm a software engineer with a focus on web technologies. " +
-            "I strive to create systems that are not only reliable, but also easy to understand and maintain."
     Div {
         Header({
             style {
@@ -42,23 +41,20 @@ fun AboutMe() {
                 fontSize(24.px)
             }
         }) {
-            Text(aboutMe)
+            Text(PropertyContext.greetingContent.aboutMe)
         }
     }
 }
 
 @Composable
 fun SiteGuide() {
-    val guide = "Here, you'll find an overview of my professional background and experience in the \"about_me\" section, " +
-            "as well as my resume in the \"cv\" section. The \"portfolio\" showcases some of my past projects and " +
-            "the \"blog\" includes my thoughts and insights on various topics related to my field."
     Div {
         Header({
             style {
                 fontSize(24.px)
             }
         }) {
-            Text(guide)
+            Text(PropertyContext.greetingContent.siteGuide)
         }
     }
 }

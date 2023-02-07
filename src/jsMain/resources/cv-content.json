@@ -3,44 +3,6 @@
   "surname": "Bogomazov",
   "position": "Software Engineer",
   "summary": "As a Software Engineer with 2 years of experience, I specialize in Kotlin and web development and have solid Java knowledge. I am a constant learner and enjoy delving into technical details. In my work, I follow the Boy Scout rule and offer solutions for improving code quality. I am rational and prioritize the benefits of the project over my own personal preferences. I also practice extreme programming techniques such as TDD and pair programming, and regularly provide feedback on my work through frequent PRs and detailed task decomposition.",
-  "contacts": [
-    {
-      "title": "email",
-      "username": "abogomazov.dev@gmail.com",
-      "link": "mailto:abogomazov.dev@gmail.com",
-      "icon_path": "icons/mail.svg"
-    },
-    {
-      "title": "website",
-      "username": "abogomazov.com",
-      "link": "https://www.abogomazov.com",
-      "icon_path": ""
-    },
-    {
-      "title": "github",
-      "username": "anton-bogomazov",
-      "link": "https://www.github.com/anton-bogomazov",
-      "icon_path": "icons/github.svg"
-    },
-    {
-      "title": "linkedin",
-      "username": "anton-p-bogomazov",
-      "link": "https://www.linkedin.com/in/anton-p-bogomazov",
-      "icon_path": "icons/linkedin.svg"
-    },
-    {
-      "title": "instagram",
-      "username": "so_so_ciable",
-      "link": "https://www.instagram.com/so_so_ciable",
-      "icon_path": "icons/instagram.svg"
-    },
-    {
-      "title": "telegram",
-      "username": "antonbogomazov",
-      "link": "https://www.t.me/antonbogomazov",
-      "icon_path": "icons/telegram.svg"
-    }
-  ],
   "experience": [
     {
       "company": "Domclick",

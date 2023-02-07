@@ -10,7 +10,7 @@ import com.abogomazov.application.content.portfolio.PortfolioCase
 import com.abogomazov.application.content.portfolio.PortfolioCaseView
 import com.abogomazov.application.content.portfolio.PortfolioView
 import com.abogomazov.application.domain.Category
-import com.abogomazov.property.featureFlags
+import com.abogomazov.property.PropertyContext
 
 const val INITIAL_PATH = "/"
 
@@ -18,13 +18,13 @@ const val INITIAL_PATH = "/"
     HashRouter(initPath = INITIAL_PATH) {
         route(INITIAL_PATH) { GreetingView() }
         route(Category.ROOT.path()) { GreetingView() }
-        if (featureFlags.isAboutMeEnabled) {
+        if (PropertyContext.featureFlags.isAboutMeEnabled) {
             route(Category.ABOUT_ME.path()) { AboutMeView() }
         }
-        if (featureFlags.isCvEnabled) {
+        if (PropertyContext.featureFlags.isCvEnabled) {
             route(Category.CV.path()) { CvView() }
         }
-        if (featureFlags.isPortfolioEnabled) {
+        if (PropertyContext.featureFlags.isPortfolioEnabled) {
             route(Category.PORTFOLIO.path()) {
                 route(INITIAL_PATH) { PortfolioView() }
                 string { uri ->
@@ -35,7 +35,7 @@ const val INITIAL_PATH = "/"
                 noMatch { PageNotFoundView() }
             }
         }
-        if (featureFlags.isBlogEnabled) {
+        if (PropertyContext.featureFlags.isBlogEnabled) {
             route(Category.BLOG.path()) {
                 noMatch { PageNotFoundView() }
             }

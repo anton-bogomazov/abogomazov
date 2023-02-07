@@ -1,7 +1,6 @@
 package com.abogomazov.application.domain
 
-import com.abogomazov.Uri
-import com.abogomazov.property.featureFlags
+import com.abogomazov.property.PropertyContext
 
 enum class Category {
     ROOT,
@@ -22,11 +21,11 @@ enum class Category {
         fun categories(): Set<Category> {
             val result = mutableSetOf<Category>()
 
-            if (featureFlags.isRootEnabled) result += ROOT
-            if (featureFlags.isAboutMeEnabled) result += ABOUT_ME
-            if (featureFlags.isCvEnabled) result += CV
-            if (featureFlags.isPortfolioEnabled) result += PORTFOLIO
-            if (featureFlags.isBlogEnabled) result += BLOG
+            if (PropertyContext.featureFlags.isRootEnabled) result += ROOT
+            if (PropertyContext.featureFlags.isAboutMeEnabled) result += ABOUT_ME
+            if (PropertyContext.featureFlags.isCvEnabled) result += CV
+            if (PropertyContext.featureFlags.isPortfolioEnabled) result += PORTFOLIO
+            if (PropertyContext.featureFlags.isBlogEnabled) result += BLOG
 
             return result
         }
