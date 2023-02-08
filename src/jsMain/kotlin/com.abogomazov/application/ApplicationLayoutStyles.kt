@@ -5,9 +5,9 @@ import org.jetbrains.compose.web.css.*
 
 object ApplicationLayoutStyles : StyleSheet(GlobalStyles) {
 
-    private val PANEL_HEIGHT = 10.vh
+    private val PANEL_HEIGHT = 6.vh
     private val PANEL_PADDING = 40.px
-    private val VIEW_CONTAINER_PADDING = 20.px
+    private val VIEW_CONTAINER_PADDING = 20.percent
 
     val panel by style {
         height(PANEL_HEIGHT)
@@ -18,5 +18,9 @@ object ApplicationLayoutStyles : StyleSheet(GlobalStyles) {
     val viewContainer by style {
         paddingLeft(VIEW_CONTAINER_PADDING)
         paddingRight(VIEW_CONTAINER_PADDING)
+
+        minHeight(88.vh)
+        maxHeight(88.vh)
+        overflow("auto")
     }
 }

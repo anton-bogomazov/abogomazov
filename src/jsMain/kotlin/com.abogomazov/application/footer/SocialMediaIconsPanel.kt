@@ -13,7 +13,7 @@ import org.jetbrains.compose.web.dom.Div
 
 object SocialMediaIconsPanel {
 
-    private const val ICON_SIZE = 24
+    private const val ICON_SIZE = 20
 
     @Composable fun render() {
         Div({ classes(GlobalStyles.flexRow) }) {
@@ -27,7 +27,7 @@ object SocialMediaIconsPanel {
     ) {
 
         companion object {
-            private val ICON_PADDING = 6.px
+            private val ICON_PADDING = 4.px
         }
 
         @Composable fun render() {

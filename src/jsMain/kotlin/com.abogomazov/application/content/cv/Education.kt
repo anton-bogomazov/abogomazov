@@ -6,6 +6,7 @@ import com.abogomazov.component.AtTitle
 import com.abogomazov.component.Renderable
 import com.abogomazov.property.EducationProperty
 import org.jetbrains.compose.web.css.padding
+import org.jetbrains.compose.web.css.paddingTop
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.Div
 
@@ -16,7 +17,7 @@ class Education(
     private val period: Pair<String, String>
 ) : Renderable {
 
-    private val padding = 10.px
+    private val padding = 8.px
 
     private val title = AtTitle(program, university, period)
 
@@ -36,7 +37,7 @@ class Education(
         Div({
             classes(GlobalStyles.flexColumn)
             style {
-                padding(padding)
+                paddingTop(padding)
             }
         }) { title.render() }
     }

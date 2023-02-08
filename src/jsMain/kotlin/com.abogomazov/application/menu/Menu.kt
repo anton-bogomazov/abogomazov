@@ -10,9 +10,9 @@ import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Text
 import com.abogomazov.application.domain.Category
 
-object Menu {
+class Menu(categories: Set<Category>) {
 
-    private val items: List<Item> = Category.categories().map { Item(it) }
+    private val items: List<Item> = categories.map { Item(it) }
 
     @Composable fun render() {
         var selectedCategory by remember { mutableStateOf(Category.from(WindowContext.hash())) }
@@ -35,15 +35,20 @@ object Menu {
     private class Item(val category: Category) {
 
         companion object {
-            private val PADDING = 10.px
+            private val heightOfHighlight = 0.px
+            private val widthOfHighlight = 8.px
         }
 
         @Composable fun render(selected: Boolean = false, callback: (Category) -> Unit) {
             A(attrs = {
-                if (selected) classes(GlobalStyles.invertedText, GlobalStyles.monospace)
-                style { padding(PADDING) }
+                classes(GlobalStyles.monospace)
+                style { padding(heightOfHighlight, widthOfHighlight) }
+
+                if (selected) classes(GlobalStyles.invertedText)
                 onClick { callback(category) } }, href = category.hash()
-            ) { Text(category.lowercase()) }
+            ) {
+                Text(category.lowercase())
+            }
         }
     }
 

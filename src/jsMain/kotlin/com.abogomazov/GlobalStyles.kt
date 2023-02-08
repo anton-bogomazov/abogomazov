@@ -11,7 +11,7 @@ object GlobalStyles : StyleSheet() {
     val HOVERED_LINK_COLOR = "#808080"
     val TILE_COLOR = "#4D4D4D"
 
-    val smaller = 8.px
+    val smaller = 10.px
     val small = 12.px
     val medium = 18.px
     val large = 24.px

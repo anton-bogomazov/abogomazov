@@ -5,10 +5,7 @@ import com.abogomazov.GlobalStyles
 import com.abogomazov.component.Renderable
 import com.abogomazov.property.EducationProperty
 import com.abogomazov.property.LanguageProperty
-import org.jetbrains.compose.web.css.fontSize
-import org.jetbrains.compose.web.css.fontStyle
-import org.jetbrains.compose.web.css.padding
-import org.jetbrains.compose.web.css.px
+import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Span
@@ -24,7 +21,8 @@ class Language(
     enum class CefrLevel { A1, A2, B1, B2, C1, C2, Native }
     data class Certificate(val link: String)
 
-    private val PADDING = 10.px
+    // fixme should be common for all in-section
+    private val PADDING = 4.px
     private val LANGUAGE_CERTIFICATE_LINK_TEXT = "Certificate"
 
     companion object {
@@ -43,10 +41,10 @@ class Language(
             classes(GlobalStyles.flexColumn)
 
             style {
-                padding(PADDING)
+                paddingTop(PADDING)
             }
         }) {
-            Div({ classes() }) {
+            Div({  classes() }) {
                 Span({ style { fontSize(GlobalStyles.medium) } }) { Text(language.name) }
             }
             Div({ style { fontStyle("italic") } }) {
