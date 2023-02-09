@@ -5,7 +5,7 @@ import com.abogomazov.GlobalStyles
 import com.abogomazov.application.domain.Category
 import com.abogomazov.application.footer.FooterPanel
 import com.abogomazov.application.menu.Menu
-import org.jetbrains.compose.web.css.height
+import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.css.keywords.auto
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Footer
@@ -15,7 +15,17 @@ import org.jetbrains.compose.web.dom.Main
 @Composable
 fun Application() {
     BaseLayout {
-        Header { Menu(Category.categories()).render() }
+        Header({
+            style {
+                position(Position.Fixed)
+                top(0.px)
+                left(0.px)
+
+                width(100.percent)
+            }
+        }) {
+            Menu(Category.categories()).render()
+        }
         Main { ViewContainer() }
         Footer { FooterPanel.render() }
     }
