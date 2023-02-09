@@ -12,7 +12,7 @@ object GlobalStyles : StyleSheet() {
     val TILE_COLOR = "#4D4D4D"
 
     val smaller = 10.px
-    val small = 12.px
+    val small = 14.px
     val medium = 18.px
     val large = 28.px
     val larger = 40.px

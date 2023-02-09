@@ -27,7 +27,17 @@ fun Application() {
             Menu(Category.categories()).render()
         }
         Main { ViewContainer() }
-        Footer { FooterPanel.render() }
+        Footer({
+            style {
+                position(Position.Fixed)
+                bottom(0.px)
+                left(0.px)
+
+                width(100.percent)
+            }
+        }) {
+            FooterPanel.render()
+        }
     }
 }
 
@@ -40,6 +50,28 @@ fun Application() {
         classes(GlobalStyles.flexCenter)
         style { height(auto) }
     }) {
+        content()
+    }
+}
+
+@Composable fun ColumnLayout(content: @Composable () -> Unit) {
+    Div({
+        classes(GlobalStyles.flexColumn)
+    }) {
+        content()
+    }
+}
+
+@Composable fun RowLayout(content: @Composable () -> Unit) {
+    Div({
+        classes(GlobalStyles.flexRow)
+    }) {
+        content()
+    }
+}
+
+@Composable fun WithClass(cssClass: String, content: @Composable () -> Unit) {
+    Div({ classes(cssClass) }) {
         content()
     }
 }
