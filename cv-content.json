@@ -85,12 +85,20 @@
     {
       "name": "NFT collection generator",
       "description": "Core + plugins architecture around fun idea of generating images"
+    },
+    {
+      "name": "Personal SPA Website",
+      "description": "Personal SPA Website built on Kotlin Compose"
     }
   ],
   "skills": [
     {
+      "category": "Design",
+      "items": ["OOD principles and patterns"]
+    },
+    {
       "category": "Programming Languages",
-      "items": ["Java", "Kotlin", "F#"]
+      "items": ["Java", "Kotlin"]
     },
     {
       "category": "Frameworks",
@@ -98,7 +106,23 @@
     },
     {
       "category": "Databases",
-      "items": ["Postgres", "Mongo"]
+      "items": ["Postgres", "Mongo", "Hibernate", "Exposed"]
+    },
+    {
+      "category": "Testing",
+      "items": ["Junit", "Kotest", "Mockito", "WireMock"]
+    },
+    {
+      "category": "Message Brokers",
+      "items": ["RabbitMQ", "Kafka"]
+    },
+    {
+      "category": "DevOps",
+      "items": ["Docker", "Kubernetes", "GitHub Actions"]
+    },
+    {
+      "category": "Monitoring",
+      "items": ["Grafana", "ELK"]
     }
   ]
 }
