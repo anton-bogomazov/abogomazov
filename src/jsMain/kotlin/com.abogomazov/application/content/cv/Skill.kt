@@ -4,8 +4,7 @@ import androidx.compose.runtime.Composable
 import com.abogomazov.GlobalStyles
 import com.abogomazov.component.Renderable
 import com.abogomazov.property.SkillProperty
-import org.jetbrains.compose.web.css.fontSize
-import org.jetbrains.compose.web.css.fontStyle
+import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Span
 import org.jetbrains.compose.web.dom.Text
@@ -23,6 +22,8 @@ class Skill(
     @Composable override fun render() {
         Div({
             classes(GlobalStyles.flexColumn)
+
+            style { paddingTop(4.px) }
         }) {
             Div { Span({ style { fontSize(GlobalStyles.medium) } }) { Text(category) } }
             Span({ style { fontStyle("italic") } }) {

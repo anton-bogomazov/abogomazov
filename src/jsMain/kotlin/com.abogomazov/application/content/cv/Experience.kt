@@ -6,6 +6,8 @@ import com.abogomazov.component.AtTitle
 import com.abogomazov.component.Renderable
 import com.abogomazov.property.ExperienceProperty
 import org.jetbrains.compose.web.css.padding
+import org.jetbrains.compose.web.css.paddingRight
+import org.jetbrains.compose.web.css.paddingTop
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Li
@@ -19,7 +21,7 @@ class Experience(
     private val period: Pair<String, String>,
     private val achievements: List<String>
 ) : Renderable {
-    private val padding = 10.px
+    private val padding = 8.px
 
     private val title = AtTitle(position, companyName, period)
 
@@ -40,10 +42,19 @@ class Experience(
         Div({
             classes(GlobalStyles.flexColumn)
 
-            style { padding(padding) }
+            style {
+                paddingTop(padding)
+            }
         }) {
             title.render()
-            Ul({ classes(GlobalStyles.list) }) {
+            Ul({
+                classes(GlobalStyles.list)
+
+                style {
+                    paddingTop(4.px)
+                    paddingRight(20.px)
+                }
+            }) {
                 achievements.forEach { achievement ->
                     Li { Text(achievement) }
                 }

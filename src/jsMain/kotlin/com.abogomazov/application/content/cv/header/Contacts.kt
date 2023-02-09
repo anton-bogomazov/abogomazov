@@ -18,15 +18,17 @@ object Contacts : Renderable {
 
     @Composable override fun render() {
         Div({
-            classes(GlobalStyles.flexRow)
+            classes(GlobalStyles.flexColumn)
 
             style {
                 justifyContent(JustifyContent.SpaceBetween)
             }
         }) {
-            PropertyContext.contacts.web.forEach {
-                Link(it.link, it.title, Icon(ICON_SIZE, it.iconPath)).render()
-            }
+            PropertyContext.contacts.web
+                .filter { !it.ignore }
+                .forEach {
+                    Link(it.link, it.title, Icon(ICON_SIZE, it.iconPath)).render()
+                }
         }
     }
 
@@ -37,8 +39,10 @@ object Contacts : Renderable {
     ) {
 
         companion object {
-            private val ICON_PADDING = 6.px
+            private val ICON_PADDING = 2.px
         }
+
+        private fun apex() = link.split("(www.)|(mailto:)".toRegex())[1]
 
         @Composable fun render() {
             A(href = link, attrs = {
@@ -47,13 +51,13 @@ object Contacts : Renderable {
                 classes(GlobalStyles.flexRow)
 
                 style {
-                    fontSize(GlobalStyles.smaller)
+                    fontSize(GlobalStyles.small)
 
                     alignItems(AlignItems.Center)
                 }
             }) {
                 Div({ style { padding(ICON_PADDING) } }) { icon.render() }
-                Text(title)
+                Text(apex())
             }
         }
 

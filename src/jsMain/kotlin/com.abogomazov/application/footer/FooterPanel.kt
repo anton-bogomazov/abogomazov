@@ -3,10 +3,7 @@ package com.abogomazov.application.footer
 import androidx.compose.runtime.Composable
 import com.abogomazov.GlobalStyles
 import com.abogomazov.application.ApplicationLayoutStyles
-import org.jetbrains.compose.web.css.AlignItems
-import org.jetbrains.compose.web.css.JustifyContent
-import org.jetbrains.compose.web.css.alignItems
-import org.jetbrains.compose.web.css.justifyContent
+import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Text
 
@@ -20,6 +17,8 @@ object FooterPanel {
             style {
                 justifyContent(JustifyContent.Center)
                 alignItems(AlignItems.Center)
+
+                fontSize(GlobalStyles.smaller)
             }
         }) {
             SocialMediaIconsPanel.render()

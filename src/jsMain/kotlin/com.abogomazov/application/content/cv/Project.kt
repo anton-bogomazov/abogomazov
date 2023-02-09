@@ -7,6 +7,8 @@ import com.abogomazov.property.EducationProperty
 import com.abogomazov.property.ProjectProperty
 import org.jetbrains.compose.web.css.fontSize
 import org.jetbrains.compose.web.css.fontStyle
+import org.jetbrains.compose.web.css.paddingTop
+import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Span
 import org.jetbrains.compose.web.dom.Text
@@ -28,7 +30,11 @@ class Project(
 
     // todo extract to component. Same for Language
     @Composable override fun render() {
-        Div({ classes(GlobalStyles.flexColumn) }) {
+        Div({
+            classes(GlobalStyles.flexColumn)
+
+            style { paddingTop(4.px) }
+        }) {
             Span({ style { fontSize(GlobalStyles.medium) } }) { Text(name) }
             Span({ style { fontStyle("italic") } }) { Text(description) }
         }

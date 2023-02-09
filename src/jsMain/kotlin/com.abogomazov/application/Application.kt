@@ -2,10 +2,11 @@ package com.abogomazov.application
 
 import androidx.compose.runtime.Composable
 import com.abogomazov.GlobalStyles
+import com.abogomazov.application.domain.Category
 import com.abogomazov.application.footer.FooterPanel
 import com.abogomazov.application.menu.Menu
-import org.jetbrains.compose.web.css.paddingBottom
-import org.jetbrains.compose.web.css.vh
+import org.jetbrains.compose.web.css.*
+import org.jetbrains.compose.web.css.keywords.auto
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Footer
 import org.jetbrains.compose.web.dom.Header
@@ -14,9 +15,29 @@ import org.jetbrains.compose.web.dom.Main
 @Composable
 fun Application() {
     BaseLayout {
-        Header { Menu.render() }
+        Header({
+            style {
+                position(Position.Fixed)
+                top(0.px)
+                left(0.px)
+
+                width(100.percent)
+            }
+        }) {
+            Menu(Category.categories()).render()
+        }
         Main { ViewContainer() }
-        Footer { FooterPanel.render() }
+        Footer({
+            style {
+                position(Position.Fixed)
+                bottom(0.px)
+                left(0.px)
+
+                width(100.percent)
+            }
+        }) {
+            FooterPanel.render()
+        }
     }
 }
 
@@ -25,7 +46,32 @@ fun Application() {
 }
 
 @Composable fun CenteredLayout(content: @Composable () -> Unit) {
-    Div({ classes(GlobalStyles.flexCenter) }) {
-        Div({ style { paddingBottom(30.vh) } }) { content() }
+    Div({
+        classes(GlobalStyles.flexCenter)
+        style { height(auto) }
+    }) {
+        content()
+    }
+}
+
+@Composable fun ColumnLayout(content: @Composable () -> Unit) {
+    Div({
+        classes(GlobalStyles.flexColumn)
+    }) {
+        content()
+    }
+}
+
+@Composable fun RowLayout(content: @Composable () -> Unit) {
+    Div({
+        classes(GlobalStyles.flexRow)
+    }) {
+        content()
+    }
+}
+
+@Composable fun WithClass(cssClass: String, content: @Composable () -> Unit) {
+    Div({ classes(cssClass) }) {
+        content()
     }
 }
