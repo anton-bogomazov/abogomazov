@@ -14,8 +14,8 @@ object GlobalStyles : StyleSheet() {
     val smaller = 10.px
     val small = 12.px
     val medium = 18.px
-    val large = 24.px
-    val larger = 36.px
+    val large = 28.px
+    val larger = 40.px
 
     val invertedText by style {
         property("background-color", TEXT_COLOR)

@@ -14,5 +14,6 @@ data class ContactProperty(
     val username: String,
     val link: String,
     @SerialName("icon_path")
-    val iconPath: String
+    val iconPath: String,
+    val ignore: Boolean
 )
