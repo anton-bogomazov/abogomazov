@@ -46,18 +46,11 @@
   ],
   "education": [
     {
-      "university": "University",
+      "university": "Ecole42 Moscow",
       "program": "Computer Science",
-      "dateFrom": "Dec 2020",
-      "dateTo": "Apr 2022",
-      "description": "Nice"
-    },
-    {
-      "university": "University",
-      "program": "Computer Science",
-      "dateFrom": "Apr 2022",
-      "dateTo": "Aug 2022",
-      "description": "Awesome"
+      "dateFrom": "Dec 2019",
+      "dateTo": "Jan 2021",
+      "description": "École 42 is a private institution of higher education in computer science that does not have traditional professors and is based on peer-to-peer and project-based learning."
     }
   ],
   "languages": [
@@ -80,25 +73,25 @@
   "projects": [
     {
       "name": "Algorithms and Data structures",
-      "description": "Algorithms and Data structures written in a human language"
+      "description": "Algorithms and Data structures written in (almost) human language"
     },
     {
       "name": "NFT collection generator",
-      "description": "Core + plugins architecture around fun idea of generating images"
+      "description": "Architectural playground built around fun idea of generating sets of images"
     },
     {
-      "name": "Personal SPA Website",
-      "description": "Personal SPA Website built on Kotlin Compose"
+      "name": "Personal Website",
+      "description": "Personal Website built on Kotlin Compose"
     }
   ],
   "skills": [
     {
       "category": "Design",
-      "items": ["OOD principles and patterns"]
+      "items": ["OOP principles and patterns", "Functional Design"]
     },
     {
       "category": "Programming Languages",
-      "items": ["Java", "Kotlin"]
+      "items": ["Java", "Kotlin", "C", "JavaScript"]
     },
     {
       "category": "Frameworks",
@@ -106,7 +99,7 @@
     },
     {
       "category": "Databases",
-      "items": ["Postgres", "Mongo", "Hibernate", "Exposed"]
+      "items": ["Postgres", "Mongo", "Hibernate", "jOOQ", "Exposed", "Liquibase"]
     },
     {
       "category": "Testing",
@@ -122,7 +115,7 @@
     },
     {
       "category": "Monitoring",
-      "items": ["Grafana", "ELK"]
+      "items": ["Grafana", "ELK", "Prometheus", "Zabbix"]
     }
   ]
 }

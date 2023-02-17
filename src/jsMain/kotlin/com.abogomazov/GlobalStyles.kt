@@ -16,6 +16,10 @@ object GlobalStyles : StyleSheet() {
     val medium = 18.px
     val large = 28.px
     val larger = 40.px
+    val largest = 60.px
+
+    val bold = 600
+    val lessBold = 450
 
     val invertedText by style {
         property("background-color", TEXT_COLOR)
@@ -70,6 +74,7 @@ object GlobalStyles : StyleSheet() {
     init {
         universal style {
             property("font-family", "Roboto, sans-serif")
+            lineHeight("1.4")
 
             property("background-color", BACKGROUND_COLOR)
             property("color", TEXT_COLOR)

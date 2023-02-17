@@ -1,7 +1,7 @@
 {
   "isAboutMeEnabled": false,
   "isRootEnabled": true,
-  "isCvEnabled": false,
+  "isCvEnabled": true,
   "isPortfolioEnabled": false,
   "isBlogEnabled": false
 }

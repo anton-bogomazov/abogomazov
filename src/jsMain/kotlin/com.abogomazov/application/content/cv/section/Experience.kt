@@ -1,12 +1,12 @@
-package com.abogomazov.application.content.cv
+package com.abogomazov.application.content.cv.section
 
 import androidx.compose.runtime.Composable
 import com.abogomazov.GlobalStyles
+import com.abogomazov.application.content.cv.layout.SectionEntity
+import com.abogomazov.application.content.cv.layout.UnorderedList
 import com.abogomazov.component.AtTitle
 import com.abogomazov.component.Renderable
 import com.abogomazov.property.ExperienceProperty
-import org.jetbrains.compose.web.css.padding
-import org.jetbrains.compose.web.css.paddingRight
 import org.jetbrains.compose.web.css.paddingTop
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.Div
@@ -21,9 +21,6 @@ class Experience(
     private val period: Pair<String, String>,
     private val achievements: List<String>
 ) : Renderable {
-    private val padding = 8.px
-
-    private val title = AtTitle(position, companyName, period)
 
     companion object {
         fun from(property: List<ExperienceProperty>) =
@@ -39,27 +36,9 @@ class Experience(
     }
 
     @Composable override fun render() {
-        Div({
-            classes(GlobalStyles.flexColumn)
-
-            style {
-                paddingTop(padding)
-            }
-        }) {
-            title.render()
-            Ul({
-                classes(GlobalStyles.list)
-
-                style {
-                    paddingTop(4.px)
-                    paddingRight(20.px)
-                }
-            }) {
-                achievements.forEach { achievement ->
-                    Li { Text(achievement) }
-                }
-            }
-        }
+        SectionEntity(AtTitle(position, companyName, period)) {
+            UnorderedList(achievements)
+        }.render()
     }
 
 }

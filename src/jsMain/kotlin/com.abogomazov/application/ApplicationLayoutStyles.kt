@@ -16,7 +16,7 @@ object ApplicationLayoutStyles : StyleSheet(GlobalStyles) {
 
     private val PANEL_HEIGHT_LARGE_SCREEN = 100.px
     private val PANEL_PADDING_LARGE_SCREEN = 40.px
-    private val VIEW_CONTAINER_PADDING_LARGE_SCREEN = 200.px
+    private val VIEW_CONTAINER_PADDING_LARGE_SCREEN = 300.px
 
     val panel by style {
         height(PANEL_HEIGHT_LARGE_SCREEN)
@@ -46,19 +46,19 @@ object ApplicationLayoutStyles : StyleSheet(GlobalStyles) {
 
     val viewContainer by style {
         padding(0.px, VIEW_CONTAINER_PADDING_LARGE_SCREEN)
-        marginTop(PANEL_HEIGHT_LARGE_SCREEN)
+        margin(PANEL_HEIGHT_LARGE_SCREEN, 0.px)
 
         media(Responsive.mediumScreen) {
             self style {
                 padding(0.px, VIEW_CONTAINER_PADDING_MEDIUM_SCREEN)
-                marginTop(PANEL_HEIGHT_MEDIUM_SCREEN)
+                margin(PANEL_HEIGHT_MEDIUM_SCREEN, 0.px)
             }
         }
 
         media(Responsive.smallScreen) {
             self style {
                 padding(0.px, VIEW_CONTAINER_PADDING_SMALL_SCREEN)
-                marginTop(PANEL_HEIGHT_SMALL_SCREEN)
+                margin(PANEL_HEIGHT_SMALL_SCREEN, 0.px)
             }
         }
     }
