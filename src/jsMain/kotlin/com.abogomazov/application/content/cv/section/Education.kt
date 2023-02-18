@@ -1,16 +1,11 @@
 package com.abogomazov.application.content.cv.section
 
 import androidx.compose.runtime.Composable
-import com.abogomazov.GlobalStyles
-import com.abogomazov.application.content.cv.layout.SectionEntity
-import com.abogomazov.application.content.cv.layout.UnorderedList
+import com.abogomazov.application.content.cv.component.SectionEntity
 import com.abogomazov.component.AtTitle
 import com.abogomazov.component.Renderable
+import com.abogomazov.component.UnorderedList
 import com.abogomazov.property.EducationProperty
-import org.jetbrains.compose.web.css.paddingLeft
-import org.jetbrains.compose.web.css.paddingTop
-import org.jetbrains.compose.web.css.px
-import org.jetbrains.compose.web.dom.*
 
 class Education(
     private val program: String,
@@ -33,8 +28,8 @@ class Education(
 
     @Composable override fun render() {
         SectionEntity(AtTitle(program, university, period)) {
-            UnorderedList(listOf(description))
-        }.render()
+            UnorderedList(listOf(description)).render()
+        }
     }
 
 }

@@ -19,15 +19,11 @@ object GlobalStyles : StyleSheet() {
         property("color", BACKGROUND_COLOR)
     }
 
-    val list by style {
-        listStyleType("circle")
-
-        property("padding-inline-start", 20.px)
-    }
-
     val spaced by style { justifyContent(JustifyContent.SpaceBetween) }
 
     val centerAligned by style { alignItems(AlignItems.Center) }
+
+    val ended by style { justifyContent(JustifyContent.FlexEnd) }
 
     val flexRow by style {
         display(DisplayStyle.Flex)

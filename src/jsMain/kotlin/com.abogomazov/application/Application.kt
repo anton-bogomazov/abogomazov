@@ -56,10 +56,10 @@ fun Application() {
     }
 }
 
-@Composable fun ColumnLayout(vararg classes: String?, content: @Composable () -> Unit) {
+@Composable fun ColumnLayout(vararg classes: String, content: @Composable () -> Unit) {
     Div({
         classes(GlobalStyles.flexColumn)
-        classes.forEach { it?.let { classes(it) } }
+        classes.forEach { classes(it) }
     }) {
         content()
     }

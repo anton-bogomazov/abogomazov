@@ -1,18 +1,11 @@
 package com.abogomazov.application.content.cv.section
 
 import androidx.compose.runtime.Composable
-import com.abogomazov.GlobalStyles
-import com.abogomazov.application.content.cv.layout.SectionEntity
-import com.abogomazov.application.content.cv.layout.UnorderedList
+import com.abogomazov.application.content.cv.component.SectionEntity
 import com.abogomazov.component.AtTitle
 import com.abogomazov.component.Renderable
+import com.abogomazov.component.UnorderedList
 import com.abogomazov.property.ExperienceProperty
-import org.jetbrains.compose.web.css.paddingTop
-import org.jetbrains.compose.web.css.px
-import org.jetbrains.compose.web.dom.Div
-import org.jetbrains.compose.web.dom.Li
-import org.jetbrains.compose.web.dom.Text
-import org.jetbrains.compose.web.dom.Ul
 
 class Experience(
     private val position: String,
@@ -37,8 +30,8 @@ class Experience(
 
     @Composable override fun render() {
         SectionEntity(AtTitle(position, companyName, period)) {
-            UnorderedList(achievements)
-        }.render()
+            UnorderedList(achievements).render()
+        }
     }
 
 }

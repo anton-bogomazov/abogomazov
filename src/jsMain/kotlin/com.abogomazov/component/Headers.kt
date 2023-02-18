@@ -58,28 +58,3 @@ class H4Header(private val text: String) : Renderable {
     }
 
 }
-
-class LinkText(private val text: String) : Renderable {
-
-    @Composable override fun render() {
-        Span({
-            classes(GlobalStyles.monospace, ResponsiveStyle.mediumText)
-        }) {
-            Text(text)
-        }
-    }
-
-}
-
-class RegularText(private val text: String) : Renderable {
-
-    @Composable
-    override fun render() {
-        Span({
-            classes(ResponsiveStyle.mediumText)
-        }) {
-            Text(text)
-        }
-    }
-
-}

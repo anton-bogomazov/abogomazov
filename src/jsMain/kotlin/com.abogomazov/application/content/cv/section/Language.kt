@@ -3,13 +3,11 @@ package com.abogomazov.application.content.cv.section
 import androidx.compose.runtime.Composable
 import com.abogomazov.GlobalStyles
 import com.abogomazov.application.RowLayout
-import com.abogomazov.application.content.cv.layout.SectionEntity
+import com.abogomazov.application.content.cv.component.SectionEntity
 import com.abogomazov.component.RegularText
 import com.abogomazov.component.Renderable
 import com.abogomazov.property.LanguageProperty
 import org.jetbrains.compose.web.dom.A
-import org.jetbrains.compose.web.dom.Span
-import org.jetbrains.compose.web.dom.Text
 
 class Language(
     private val language: LanguageEnum,
@@ -35,17 +33,16 @@ class Language(
     @Composable override fun render() {
         SectionEntity {
             RowLayout(GlobalStyles.spaced) {
-                RegularText(language.name).render()
+                RegularText { language.name }
 
-                Span {
+                A {
                     certificate?.let {
-                        A {
-                            Text("Certified ") // todo link to the cert
-                        }
+                        RegularText { "Certified " }
+                    }.let {
+                        RegularText { level.toString() }
                     }
-                    RegularText(level.toString()).render()
                 }
             }
-        }.render()
+        }
     }
 }

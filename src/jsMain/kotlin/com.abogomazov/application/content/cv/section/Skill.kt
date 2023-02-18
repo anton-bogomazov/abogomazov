@@ -1,12 +1,11 @@
 package com.abogomazov.application.content.cv.section
 
 import androidx.compose.runtime.Composable
-import com.abogomazov.application.content.cv.layout.SectionEntity
+import com.abogomazov.application.content.cv.component.SectionEntity
 import com.abogomazov.component.H4Header
+import com.abogomazov.component.RegularText
 import com.abogomazov.component.Renderable
 import com.abogomazov.property.SkillProperty
-import org.jetbrains.compose.web.dom.Span
-import org.jetbrains.compose.web.dom.Text
 
 class Skill(
     private val category: String,
@@ -20,15 +19,13 @@ class Skill(
 
     @Composable override fun render() {
         SectionEntity(H4Header(category)) {
-            Span {
-                items.forEachIndexed { index, item ->
-                    Text(item)
-                    if (index != items.lastIndex) {
-                        Text(", ")
-                    }
+            items.forEachIndexed { index, item ->
+                RegularText { item }
+                if (index != items.lastIndex) {
+                    RegularText { ", " }
                 }
             }
-        }.render()
+        }
     }
 
 }
