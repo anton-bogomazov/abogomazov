@@ -4,11 +4,10 @@ import androidx.compose.runtime.Composable
 import com.abogomazov.GlobalStyles
 import com.abogomazov.application.RowLayout
 import com.abogomazov.application.content.cv.layout.SectionEntity
+import com.abogomazov.component.RegularText
 import com.abogomazov.component.Renderable
 import com.abogomazov.property.LanguageProperty
-import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.A
-import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Span
 import org.jetbrains.compose.web.dom.Text
 
@@ -33,24 +32,18 @@ class Language(
             }
     }
 
-    object Style : StyleSheet(GlobalStyles) {
-        val spaced by style { justifyContent(JustifyContent.SpaceBetween) }
-    }
-
     @Composable override fun render() {
         SectionEntity {
-            RowLayout(Style.spaced) {
-                Span({ style {
-                    fontSize(GlobalStyles.medium)
-                    fontWeight(GlobalStyles.lessBold)
-                } }) { Text(language.name) }
+            RowLayout(GlobalStyles.spaced) {
+                RegularText(language.name).render()
+
                 Span {
                     certificate?.let {
                         A {
                             Text("Certified ") // todo link to the cert
                         }
                     }
-                    Text(level.toString())
+                    RegularText(level.toString()).render()
                 }
             }
         }.render()

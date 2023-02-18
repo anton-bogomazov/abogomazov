@@ -1,7 +1,7 @@
 package com.abogomazov.application
 
 import com.abogomazov.GlobalStyles
-import com.abogomazov.Responsive
+import com.abogomazov.ResponsiveProperties
 import org.jetbrains.compose.web.css.*
 
 object ApplicationLayoutStyles : StyleSheet(GlobalStyles) {
@@ -23,23 +23,23 @@ object ApplicationLayoutStyles : StyleSheet(GlobalStyles) {
         marginLeft(PANEL_PADDING_LARGE_SCREEN)
         marginRight(PANEL_PADDING_LARGE_SCREEN)
 
-        fontSize(GlobalStyles.medium)
+        fontSize(ResponsiveProperties.largeScreenText.medium)
 
-        media(Responsive.mediumScreen) {
+        media(ResponsiveProperties.mediumScreen) {
             self style {
                 height(PANEL_HEIGHT_MEDIUM_SCREEN)
                 margin(0.px, PANEL_PADDING_MEDIUM_SCREEN)
 
-                fontSize(GlobalStyles.small)
+                fontSize(ResponsiveProperties.mediumScreenText.medium)
             }
         }
 
-        media(Responsive.smallScreen) {
+        media(ResponsiveProperties.smallScreen) {
             self style {
                 height(PANEL_HEIGHT_SMALL_SCREEN)
                 margin(0.px, PANEL_PADDING_SMALL_SCREEN)
 
-                fontSize(GlobalStyles.smaller)
+                fontSize(ResponsiveProperties.smallScreenText.medium)
             }
         }
     }
@@ -48,17 +48,24 @@ object ApplicationLayoutStyles : StyleSheet(GlobalStyles) {
         padding(0.px, VIEW_CONTAINER_PADDING_LARGE_SCREEN)
         margin(PANEL_HEIGHT_LARGE_SCREEN, 0.px)
 
-        media(Responsive.mediumScreen) {
+        media(ResponsiveProperties.mediumScreen) {
             self style {
                 padding(0.px, VIEW_CONTAINER_PADDING_MEDIUM_SCREEN)
                 margin(PANEL_HEIGHT_MEDIUM_SCREEN, 0.px)
             }
         }
 
-        media(Responsive.smallScreen) {
+        media(ResponsiveProperties.smallScreen) {
             self style {
                 padding(0.px, VIEW_CONTAINER_PADDING_SMALL_SCREEN)
                 margin(PANEL_HEIGHT_SMALL_SCREEN, 0.px)
+            }
+        }
+
+        media("print") {
+            self style {
+                padding(0.px)
+                margin(0.px)
             }
         }
     }

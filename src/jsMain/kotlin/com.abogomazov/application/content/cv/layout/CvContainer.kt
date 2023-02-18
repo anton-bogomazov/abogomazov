@@ -2,14 +2,19 @@ package com.abogomazov.application.content.cv.layout
 
 import androidx.compose.runtime.Composable
 import com.abogomazov.GlobalStyles
+import com.abogomazov.application.ResponsiveStyle
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.Div
 
+object LayoutStyle : StyleSheet(GlobalStyles) {
+    val noPadFirstChild by style {
+        firstChild style { paddingTop(0.px) }
+    }
+}
+
 @Composable fun CvContainerLayout(content: @Composable () -> Unit) {
     Div({
-        classes(GlobalStyles.flexColumn, GlobalStyles.printable)
-
-        style { paddingTop(20.px) }
+        classes(GlobalStyles.flexColumn, GlobalStyles.printable, ResponsiveStyle.outerPadded)
     }) {
         content()
     }
@@ -27,7 +32,7 @@ import org.jetbrains.compose.web.dom.Div
 
 @Composable fun CvCentralSection(content: @Composable () -> Unit) {
     Div({
-        classes(GlobalStyles.flexColumn)
+        classes(GlobalStyles.flexColumn, LayoutStyle.noPadFirstChild)
         style {
             width(65.percent)
 
@@ -38,7 +43,7 @@ import org.jetbrains.compose.web.dom.Div
 
 @Composable fun CvSideSection(content: @Composable () -> Unit) {
     Div({
-        classes(GlobalStyles.flexColumn)
+        classes(GlobalStyles.flexColumn, LayoutStyle.noPadFirstChild)
         style { width(35.percent) }
     }) { content() }
 }

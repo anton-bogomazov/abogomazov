@@ -2,6 +2,7 @@ package com.abogomazov.application.footer
 
 import androidx.compose.runtime.Composable
 import com.abogomazov.GlobalStyles
+import com.abogomazov.ResponsiveProperties
 import com.abogomazov.application.ApplicationLayoutStyles
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.Div
@@ -18,7 +19,7 @@ object FooterPanel {
                 justifyContent(JustifyContent.Center)
                 alignItems(AlignItems.Center)
 
-                fontSize(GlobalStyles.smaller)
+                fontSize(ResponsiveProperties.largeScreenText.smaller)
             }
         }) {
             SocialMediaIconsPanel.render()

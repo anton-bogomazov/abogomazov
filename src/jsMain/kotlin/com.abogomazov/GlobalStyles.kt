@@ -11,13 +11,6 @@ object GlobalStyles : StyleSheet() {
     val HOVERED_LINK_COLOR = "#808080"
     val TILE_COLOR = "#4D4D4D"
 
-    val smaller = 10.px
-    val small = 14.px
-    val medium = 18.px
-    val large = 28.px
-    val larger = 40.px
-    val largest = 60.px
-
     val bold = 600
     val lessBold = 450
 
@@ -31,6 +24,10 @@ object GlobalStyles : StyleSheet() {
 
         property("padding-inline-start", 20.px)
     }
+
+    val spaced by style { justifyContent(JustifyContent.SpaceBetween) }
+
+    val centerAligned by style { alignItems(AlignItems.Center) }
 
     val flexRow by style {
         display(DisplayStyle.Flex)

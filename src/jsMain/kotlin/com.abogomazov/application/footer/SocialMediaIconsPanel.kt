@@ -1,23 +1,20 @@
 package com.abogomazov.application.footer
 
 import androidx.compose.runtime.Composable
-import com.abogomazov.GlobalStyles
+import com.abogomazov.application.ResponsiveStyle
+import com.abogomazov.application.RowLayout
 import com.abogomazov.application.domain.Icon
 import com.abogomazov.property.PropertyContext
 import org.jetbrains.compose.web.attributes.ATarget
 import org.jetbrains.compose.web.attributes.target
-import org.jetbrains.compose.web.css.padding
-import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.A
-import org.jetbrains.compose.web.dom.Div
 
 object SocialMediaIconsPanel {
 
-    private const val ICON_SIZE = 20
-
     @Composable fun render() {
-        Div({ classes(GlobalStyles.flexRow) }) {
-            PropertyContext.contacts.web.map { IconLink(it.link, Icon(ICON_SIZE, it.iconPath)).render() }
+        RowLayout {
+            PropertyContext.contacts.web
+                .map { IconLink(it.link, Icon(it.iconPath)).render() }
         }
     }
 
@@ -26,14 +23,10 @@ object SocialMediaIconsPanel {
         private val icon: Icon,
     ) {
 
-        companion object {
-            private val ICON_PADDING = 4.px
-        }
-
         @Composable fun render() {
             A(href = link, attrs = {
                 target(ATarget.Blank)
-                style { padding(ICON_PADDING) }
+                classes(ResponsiveStyle.footerContactIcon)
             }) { icon.render() }
         }
 

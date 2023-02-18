@@ -16,6 +16,7 @@ import org.jetbrains.compose.web.dom.Main
 fun Application() {
     BaseLayout {
         Header({
+            classes(GlobalStyles.nonPrintable)
             style {
                 position(Position.Fixed)
                 top(0.px)
@@ -28,6 +29,7 @@ fun Application() {
         }
         Main { ViewContainer() }
         Footer({
+            classes(GlobalStyles.nonPrintable)
             style {
                 position(Position.Fixed)
                 bottom(0.px)
@@ -54,10 +56,10 @@ fun Application() {
     }
 }
 
-@Composable fun ColumnLayout(vararg classes: String, content: @Composable () -> Unit) {
+@Composable fun ColumnLayout(vararg classes: String?, content: @Composable () -> Unit) {
     Div({
         classes(GlobalStyles.flexColumn)
-        classes.forEach { classes(it) }
+        classes.forEach { it?.let { classes(it) } }
     }) {
         content()
     }
