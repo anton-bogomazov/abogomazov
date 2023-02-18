@@ -2,62 +2,41 @@ package com.abogomazov.application.content.cv.header
 
 import androidx.compose.runtime.Composable
 import com.abogomazov.GlobalStyles
+import com.abogomazov.application.ColumnLayout
+import com.abogomazov.application.RowLayout
 import com.abogomazov.application.domain.Icon
+import com.abogomazov.component.RegularText
 import com.abogomazov.component.Renderable
-import com.abogomazov.property.PropertyContext
+import com.abogomazov.property.ContactProperty
 import org.jetbrains.compose.web.attributes.ATarget
 import org.jetbrains.compose.web.attributes.target
-import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.A
-import org.jetbrains.compose.web.dom.Div
-import org.jetbrains.compose.web.dom.Text
 
-object Contacts : Renderable {
-
-    private const val ICON_SIZE = 12
+class Contacts(
+    private val contacts: List<ContactProperty>
+) : Renderable {
 
     @Composable override fun render() {
-        Div({
-            classes(GlobalStyles.flexColumn)
-
-            style {
-                justifyContent(JustifyContent.SpaceBetween)
-            }
-        }) {
-            PropertyContext.contacts.web
-                .filter { !it.ignore }
-                .forEach {
-                    Link(it.link, it.title, Icon(ICON_SIZE, it.iconPath)).render()
-                }
+        ColumnLayout(GlobalStyles.spaced) {
+            contacts.map {
+                Link(it.link, Icon(it.iconPath))
+            }.forEach { it.render() }
         }
     }
 
     private class Link(
         private val link: String,
-        private val title: String,
         private val icon: Icon,
     ) {
-
-        companion object {
-            private val ICON_PADDING = 2.px
-        }
 
         private fun apex() = link.split("(www.)|(mailto:)".toRegex())[1]
 
         @Composable fun render() {
-            A(href = link, attrs = {
-                target(ATarget.Blank)
-
-                classes(GlobalStyles.flexRow)
-
-                style {
-                    fontSize(GlobalStyles.small)
-
-                    alignItems(AlignItems.Center)
+            A(href = link, attrs = { target(ATarget.Blank) }) {
+                RowLayout(GlobalStyles.centerAligned) {
+                    icon.render()
+                    RegularText(GlobalStyles.monospace) { apex() }
                 }
-            }) {
-                Div({ style { padding(ICON_PADDING) } }) { icon.render() }
-                Text(apex())
             }
         }
 

@@ -11,22 +11,19 @@ object GlobalStyles : StyleSheet() {
     val HOVERED_LINK_COLOR = "#808080"
     val TILE_COLOR = "#4D4D4D"
 
-    val smaller = 10.px
-    val small = 14.px
-    val medium = 18.px
-    val large = 28.px
-    val larger = 40.px
+    val bold = 600
+    val lessBold = 450
 
     val invertedText by style {
         property("background-color", TEXT_COLOR)
         property("color", BACKGROUND_COLOR)
     }
 
-    val list by style {
-        listStyleType("circle")
+    val spaced by style { justifyContent(JustifyContent.SpaceBetween) }
 
-        property("padding-inline-start", 20.px)
-    }
+    val centerAligned by style { alignItems(AlignItems.Center) }
+
+    val ended by style { justifyContent(JustifyContent.FlexEnd) }
 
     val flexRow by style {
         display(DisplayStyle.Flex)
@@ -70,6 +67,7 @@ object GlobalStyles : StyleSheet() {
     init {
         universal style {
             property("font-family", "Roboto, sans-serif")
+            lineHeight("1.4")
 
             property("background-color", BACKGROUND_COLOR)
             property("color", TEXT_COLOR)

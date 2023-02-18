@@ -24,7 +24,7 @@
     {
       "title": "linkedin",
       "username": "anton-p-bogomazov",
-      "link": "https://www.linkedin.com/in/anton-p-bogomazov",
+      "link": "https://www.linkedin.com/in/abogomazov",
       "icon_path": "icons/linkedin.svg",
       "ignore": false
     },
@@ -40,7 +40,7 @@
       "username": "antonbogomazov",
       "link": "https://www.t.me/antonbogomazov",
       "icon_path": "icons/telegram.svg",
-      "ignore": false
+      "ignore": true
     }
   ]
 }

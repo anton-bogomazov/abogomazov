@@ -1,14 +1,11 @@
-package com.abogomazov.application.content.cv
+package com.abogomazov.application.content.cv.section
 
 import androidx.compose.runtime.Composable
-import com.abogomazov.GlobalStyles
+import com.abogomazov.application.content.cv.component.SectionEntity
 import com.abogomazov.component.AtTitle
 import com.abogomazov.component.Renderable
+import com.abogomazov.component.UnorderedList
 import com.abogomazov.property.EducationProperty
-import org.jetbrains.compose.web.css.padding
-import org.jetbrains.compose.web.css.paddingTop
-import org.jetbrains.compose.web.css.px
-import org.jetbrains.compose.web.dom.Div
 
 class Education(
     private val program: String,
@@ -16,10 +13,6 @@ class Education(
     private val description: String,
     private val period: Pair<String, String>
 ) : Renderable {
-
-    private val padding = 8.px
-
-    private val title = AtTitle(program, university, period)
 
     companion object {
         fun from(property: List<EducationProperty>) =
@@ -34,12 +27,9 @@ class Education(
     }
 
     @Composable override fun render() {
-        Div({
-            classes(GlobalStyles.flexColumn)
-            style {
-                paddingTop(padding)
-            }
-        }) { title.render() }
+        SectionEntity(AtTitle(program, university, period)) {
+            UnorderedList(listOf(description)).render()
+        }
     }
 
 }

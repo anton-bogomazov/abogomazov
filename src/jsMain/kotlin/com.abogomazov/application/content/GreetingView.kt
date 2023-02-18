@@ -2,62 +2,64 @@ package com.abogomazov.application.content
 
 import androidx.compose.runtime.Composable
 import com.abogomazov.GlobalStyles
-import com.abogomazov.Responsive
+import com.abogomazov.ResponsiveProperties
 import com.abogomazov.application.CenteredLayout
 import com.abogomazov.application.ColumnLayout
 import com.abogomazov.application.WithClass
 import com.abogomazov.component.Renderable
 import com.abogomazov.property.PropertyContext
 import org.jetbrains.compose.web.css.*
-import org.jetbrains.compose.web.dom.*
+import org.jetbrains.compose.web.dom.Br
+import org.jetbrains.compose.web.dom.Span
+import org.jetbrains.compose.web.dom.Text
 
 class GreetingView : Renderable {
 
     object Style : StyleSheet(GlobalStyles) {
         val myNameIs by style {
-            fontSize(Responsive.largeScreenText.large)
+            fontSize(ResponsiveProperties.largeScreenText.large)
 
-            media(Responsive.mediumScreen) {
+            media(ResponsiveProperties.mediumScreen) {
                 self style {
-                    fontSize(Responsive.mediumScreenText.large)
+                    fontSize(ResponsiveProperties.mediumScreenText.large)
                 }
             }
 
-            media(Responsive.smallScreen) {
+            media(ResponsiveProperties.smallScreen) {
                 self style {
-                    fontSize(Responsive.smallScreenText.large)
+                    fontSize(ResponsiveProperties.smallScreenText.large)
                 }
             }
         }
 
         val name by style {
-            fontSize(Responsive.largeScreenText.larger)
+            fontSize(ResponsiveProperties.largeScreenText.larger)
 
-            media(Responsive.mediumScreen) {
+            media(ResponsiveProperties.mediumScreen) {
                 self style {
-                    fontSize(Responsive.mediumScreenText.larger)
+                    fontSize(ResponsiveProperties.mediumScreenText.larger)
                 }
             }
 
-            media(Responsive.smallScreen) {
+            media(ResponsiveProperties.smallScreen) {
                 self style {
-                    fontSize(Responsive.smallScreenText.larger)
+                    fontSize(ResponsiveProperties.smallScreenText.larger)
                 }
             }
         }
 
         val contentText by style {
-            fontSize(Responsive.largeScreenText.medium)
+            fontSize(ResponsiveProperties.largeScreenText.medium)
 
-            media(Responsive.mediumScreen) {
+            media(ResponsiveProperties.mediumScreen) {
                 self style {
-                    fontSize(Responsive.mediumScreenText.medium)
+                    fontSize(ResponsiveProperties.mediumScreenText.medium)
                 }
             }
 
-            media(Responsive.smallScreen) {
+            media(ResponsiveProperties.smallScreen) {
                 self style {
-                    fontSize(Responsive.smallScreenText.medium)
+                    fontSize(ResponsiveProperties.smallScreenText.medium)
                 }
             }
         }
@@ -65,13 +67,13 @@ class GreetingView : Renderable {
         val bottomPadded by style {
             paddingBottom(12.px)
 
-            media(Responsive.mediumScreen) {
+            media(ResponsiveProperties.mediumScreen) {
                 self style {
                     paddingBottom(8.px)
                 }
             }
 
-            media(Responsive.smallScreen) {
+            media(ResponsiveProperties.smallScreen) {
                 self style {
                     paddingBottom(6.px)
                 }
@@ -86,7 +88,7 @@ class GreetingView : Renderable {
                 Span({
                     classes(GlobalStyles.monospace, GlobalStyles.invertedText)
                     style {
-                        fontSize(GlobalStyles.medium)
+                        fontSize(ResponsiveProperties.largeScreenText.medium)
                         fontStyle("italic")
                         paddingBottom(12.px)
                     }

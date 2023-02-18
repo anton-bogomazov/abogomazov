@@ -2,8 +2,8 @@ package com.abogomazov.component
 
 import androidx.compose.runtime.Composable
 import com.abogomazov.GlobalStyles
-import org.jetbrains.compose.web.css.fontSize
-import org.jetbrains.compose.web.css.fontStyle
+import com.abogomazov.application.ResponsiveStyle
+import org.jetbrains.compose.web.css.fontWeight
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Span
 import org.jetbrains.compose.web.dom.Text
@@ -15,15 +15,15 @@ class AtTitle(
 ) : Renderable{
 
     private val separator = " @ "
-    private val periodText = "${period.first} - ${period.first}"
+    private val periodText = "${period.first} - ${period.second}"
 
     @Composable override fun render() {
-        Div({ style { fontSize(GlobalStyles.medium) } }) {
-            Span { Text(position) }
-            Span({ style { fontStyle("italic") } }) { Text(separator) }
-            Span { Text(at) }
+        Div({ classes(ResponsiveStyle.mediumText) }) {
+            Span({ style { fontWeight(GlobalStyles.bold) } }) { Text(position) }
+            Span({ style { fontWeight(GlobalStyles.lessBold) } }) { Text(separator) }
+            Span({ style { fontWeight(GlobalStyles.lessBold) } }) { Text(at) }
         }
-        Span({ style { fontStyle("italic") } }) { Text(periodText) }
+        Span({ classes(GlobalStyles.monospace, ResponsiveStyle.mediumText) }) { Text(periodText) }
     }
 
 }
