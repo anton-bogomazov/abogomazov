@@ -11,6 +11,13 @@ object ResponsiveStyle : StyleSheet(GlobalStyles) {
         media("print") { self style { padding(20.px) } }
     }
 
+    val transformableToColumn by style {
+        media(ResponsiveProperties.transformToColumnedView) {
+            self style { flexDirection(FlexDirection.Column) }
+        }
+        media("print") { self style { flexDirection(FlexDirection.Row) } }
+    }
+
     val largestText by style {
         fontSize(ResponsiveProperties.largeScreenText.largest)
 
@@ -35,11 +42,13 @@ object ResponsiveStyle : StyleSheet(GlobalStyles) {
         media("print") { self style { fontSize(ResponsiveProperties.printText.medium) } }
     }
 
-
     val cvContactIcon by style {
         height(ResponsiveProperties.largeScreenIcons.cvContactIcon.size)
         width(ResponsiveProperties.largeScreenIcons.cvContactIcon.size)
         paddingRight(ResponsiveProperties.largeScreenIcons.cvContactIcon.padding)
+
+        maxWidth(100.percent)
+        display(DisplayStyle.Block)
 
         media("print") {
             self style {
@@ -53,6 +62,9 @@ object ResponsiveStyle : StyleSheet(GlobalStyles) {
     val footerContactIcon by style {
         height(ResponsiveProperties.largeScreenIcons.footerContactIcon.size)
         width(ResponsiveProperties.largeScreenIcons.footerContactIcon.size)
+
+        maxWidth(100.percent)
+        display(DisplayStyle.Block)
 
         media("print") {
             self style {

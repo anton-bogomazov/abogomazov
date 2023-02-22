@@ -1,7 +1,7 @@
 package com.abogomazov.application.content.cv
 
 import androidx.compose.runtime.Composable
-import com.abogomazov.application.ColumnLayout
+import com.abogomazov.application.ResponsiveStyle
 import com.abogomazov.application.RowLayout
 import com.abogomazov.application.content.cv.component.Section
 import com.abogomazov.application.content.cv.header.Contacts
@@ -10,20 +10,20 @@ import com.abogomazov.application.content.cv.section.*
 import com.abogomazov.property.PropertyContext
 
 @Composable fun CvView() {
-    ColumnLayout {
+    CvViewLayout {
         CvContainerMenu.render()
-        Cv()
+        CvContent()
     }
 }
 
-@Composable fun Cv() {
+@Composable fun CvContent() {
     val fullname = "${PropertyContext.cvContent.firstname} ${PropertyContext.cvContent.surname}"
     val position = PropertyContext.cvContent.position
     val contacts = Contacts(PropertyContext.contacts.web.filter { !it.ignore })
 
     CvContainerLayout {
         CvHeader(fullname, position, contacts).render()
-        RowLayout {
+        RowLayout(ResponsiveStyle.transformableToColumn) {
             CvCentralSection {
                 listOf(
                     Section("Summary", listOf(Summary(PropertyContext.cvContent.summary))),
