@@ -5,8 +5,9 @@ import org.jetbrains.compose.web.css.*
 object ResponsiveProperties : StyleSheet(GlobalStyles) {
 
     val smallScreen = mediaMaxWidth(420.px)
-    val mediumScreen = mediaMaxWidth(840.px)
-    val a4 = mediaMaxWidth(595.px)
+    val mediumScreen = mediaMaxWidth(1440.px)
+
+    val transformToColumnedView = mediumScreen
 
     val smallScreenText = TextSize(8.px, 10.px, 12.px, 14.px, 16.px, 20.px)
     val mediumScreenText = TextSize(12.px, 16.px, 20.px, 24.px, 30.px, 36.px)

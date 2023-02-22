@@ -2,6 +2,7 @@ package com.abogomazov.application.content.cv.header
 
 import androidx.compose.runtime.Composable
 import com.abogomazov.application.ColumnLayout
+import com.abogomazov.application.ResponsiveStyle
 import com.abogomazov.application.RowLayout
 import com.abogomazov.application.content.cv.CvCentralSection
 import com.abogomazov.application.content.cv.CvSideSection
@@ -16,7 +17,7 @@ class CvHeader(
 ) : Renderable {
 
     @Composable override fun render() {
-        RowLayout {
+        RowLayout(ResponsiveStyle.transformableToColumn) {
             CvCentralSection {
                 ColumnLayout {
                     H1Header(fullname).render()

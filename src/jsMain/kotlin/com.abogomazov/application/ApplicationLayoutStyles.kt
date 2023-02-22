@@ -16,7 +16,7 @@ object ApplicationLayoutStyles : StyleSheet(GlobalStyles) {
 
     private val PANEL_HEIGHT_LARGE_SCREEN = 100.px
     private val PANEL_PADDING_LARGE_SCREEN = 40.px
-    private val VIEW_CONTAINER_PADDING_LARGE_SCREEN = 300.px
+    private val VIEW_CONTAINER_PADDING_LARGE_SCREEN = 20.percent
 
     val panel by style {
         height(PANEL_HEIGHT_LARGE_SCREEN)
