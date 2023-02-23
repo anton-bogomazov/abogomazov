@@ -21,7 +21,7 @@ enum class Category {
         fun categories(): Set<Category> {
             val result = mutableSetOf<Category>()
 
-            if (PropertyContext.featureFlags.isRootEnabled) result += ROOT
+            result += ROOT
             if (PropertyContext.featureFlags.isAboutMeEnabled) result += WHOAMI
             if (PropertyContext.featureFlags.isCvEnabled) result += CV
             if (PropertyContext.featureFlags.isPortfolioEnabled) result += PORTFOLIO

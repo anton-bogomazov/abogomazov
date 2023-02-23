@@ -8,16 +8,16 @@ import com.abogomazov.application.content.portfolio.PortfolioCaseView
 import com.abogomazov.application.content.portfolio.PortfolioView
 import com.abogomazov.cv.CvView
 import com.abogomazov.domain.Category
-import com.abogomazov.greeting.GreetingView
 import com.abogomazov.pageNotFound.PageNotFoundView
+import com.abogomazov.pageNotFound.StubView
 import com.abogomazov.property.PropertyContext
 
 const val INITIAL_PATH = "/"
 
 @Composable fun routeOnView() {
     HashRouter(initPath = INITIAL_PATH) {
-        route(INITIAL_PATH) { GreetingView() }
-        route(Category.ROOT.path()) { GreetingView() }
+        route(INITIAL_PATH) { StubView() }
+        route(Category.ROOT.path()) { StubView() }
         if (PropertyContext.featureFlags.isAboutMeEnabled) {
             route(Category.WHOAMI.path()) { AboutMeView() }
         }
