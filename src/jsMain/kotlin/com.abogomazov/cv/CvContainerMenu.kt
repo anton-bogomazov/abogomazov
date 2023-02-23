@@ -28,7 +28,7 @@ class CvContainerMenu : Renderable {
                 A(href = href, attrs = {
                     if (href != printCommand) download(cvFilename)
                 }) {
-                    RegularText(TextStyle.monospace, TextStyle.inverted, GlobalStyle.padded) {
+                    RegularText(TextStyle.medium, TextStyle.monospace, TextStyle.inverted, GlobalStyle.padded) {
                         text
                     }
                 }
@@ -39,7 +39,7 @@ class CvContainerMenu : Renderable {
 
     @Composable override fun render() {
         RowLayout(GlobalStyle.blackBackground, LayoutStyle.spaced, LayoutStyle.centerAligned, LayoutStyle.nonPrintable) {
-            RegularText(TextStyle.inverted, GlobalStyle.padded) { "RESUME" }
+            RegularText(TextStyle.medium, TextStyle.inverted, GlobalStyle.padded) { "RESUME" }
             RowLayout(LayoutStyle.ended) {
                 SaveAsPdfButton.render()
                 PrintButton.render()

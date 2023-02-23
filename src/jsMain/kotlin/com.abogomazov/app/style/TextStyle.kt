@@ -69,6 +69,10 @@ object TextStyle : StyleSheet(GlobalStyle) {
         color(GlobalStyle.backgroundColor)
     }
 
+    val highlighted by style {
+        padding(0.px, 8.px)
+    }
+
     val monospace by style {
         property("font-family", "'Roboto Mono', monospace")
     }

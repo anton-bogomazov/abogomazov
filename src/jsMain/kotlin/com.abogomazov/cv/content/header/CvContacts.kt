@@ -37,7 +37,7 @@ class CvContacts(
             A(href = link, attrs = { target(ATarget.Blank) }) {
                 RowLayout(LayoutStyle.centerAligned) {
                     Img(src = path) { classes(IconStyle.cvContact) }
-                    RegularText(TextStyle.monospace) { apex() }
+                    RegularText(TextStyle.medium, TextStyle.monospace) { apex() }
                 }
             }
         }
