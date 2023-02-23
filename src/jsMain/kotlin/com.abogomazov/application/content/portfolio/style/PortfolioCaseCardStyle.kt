@@ -1,11 +1,11 @@
 package com.abogomazov.application.content.portfolio.style
 
-import com.abogomazov.GlobalStyles
+import com.abogomazov.app.style.GlobalStyle
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.css.Color.darkgray
 import org.jetbrains.compose.web.css.Color.lightgray
 
-object PortfolioCaseCardStyle : StyleSheet(GlobalStyles) {
+object PortfolioCaseCardStyle : StyleSheet(GlobalStyle) {
 
     val caseCard by style {
         display(DisplayStyle.Flex)
