@@ -41,7 +41,7 @@ private object CvContainerStyles : StyleSheet(GlobalStyle) {
             }
         }
 
-        media("print") {
+        media(ResponsiveProperty.print) {
             self style {
                 width(mainWidth)
                 paddingRight(30.px)
@@ -56,7 +56,7 @@ private object CvContainerStyles : StyleSheet(GlobalStyle) {
             self style { width(100.percent) }
         }
 
-        media("print") {
+        media(ResponsiveProperty.print) {
             self style { width(sideWidth) }
         }
     }
