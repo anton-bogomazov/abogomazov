@@ -1,6 +1,6 @@
 package com.abogomazov.property
 
-import com.abogomazov.application.content.cv.section.Language
+import com.abogomazov.cv.content.section.Language
 import kotlinx.serialization.Serializable
 
 @Serializable
