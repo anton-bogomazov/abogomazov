@@ -1,11 +1,11 @@
 package com.abogomazov.greeting
 
 import androidx.compose.runtime.Composable
-import com.abogomazov.property.PropertyContext
+import com.abogomazov.property.GreetingContent
 
-@Composable fun GreetingView() {
+@Composable fun GreetingView(content: GreetingContent) {
     Greeting(
-        aboutMeText = PropertyContext.greetingContent.aboutMe,
-        siteGuideText = PropertyContext.greetingContent.siteGuide,
+        aboutMeText = content.aboutMe,
+        siteGuideText = content.siteGuide,
     ).render()
 }
