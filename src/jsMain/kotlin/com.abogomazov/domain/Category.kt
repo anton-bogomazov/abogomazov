@@ -1,6 +1,7 @@
 package com.abogomazov.domain
 
-import com.abogomazov.property.PropertyContext
+import com.abogomazov.property.FeatureFlags
+import com.abogomazov.property.readProperty
 
 enum class Category {
     ROOT,
@@ -20,12 +21,13 @@ enum class Category {
 
         fun categories(): Set<Category> {
             val result = mutableSetOf<Category>()
+            val featureFlags = readProperty(FeatureFlags.serializer(), js("require('./feature-flags.json')") as Any)
 
             result += ROOT
-            if (PropertyContext.featureFlags.isAboutMeEnabled) result += WHOAMI
-            if (PropertyContext.featureFlags.isCvEnabled) result += CV
-            if (PropertyContext.featureFlags.isPortfolioEnabled) result += PORTFOLIO
-            if (PropertyContext.featureFlags.isBlogEnabled) result += BLOG
+            if (featureFlags.isAboutMeEnabled) result += WHOAMI
+            if (featureFlags.isCvEnabled) result += CV
+            if (featureFlags.isPortfolioEnabled) result += PORTFOLIO
+            if (featureFlags.isBlogEnabled) result += BLOG
 
             return result
         }

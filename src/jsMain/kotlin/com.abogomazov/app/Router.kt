@@ -10,21 +10,30 @@ import com.abogomazov.cv.CvView
 import com.abogomazov.domain.Category
 import com.abogomazov.pageNotFound.PageNotFoundView
 import com.abogomazov.pageNotFound.StubView
-import com.abogomazov.property.PropertyContext
+import com.abogomazov.property.Contacts
+import com.abogomazov.property.CvContent
+import com.abogomazov.property.FeatureFlags
+import com.abogomazov.property.readProperty
 
 const val INITIAL_PATH = "/"
 
 @Composable fun routeOnView() {
+    val featureFlags = readProperty(FeatureFlags.serializer(), js("require('./feature-flags.json')") as Any)
     HashRouter(initPath = INITIAL_PATH) {
         route(INITIAL_PATH) { StubView() }
         route(Category.ROOT.path()) { StubView() }
-        if (PropertyContext.featureFlags.isAboutMeEnabled) {
+        if (featureFlags.isAboutMeEnabled) {
             route(Category.WHOAMI.path()) { AboutMeView() }
         }
-        if (PropertyContext.featureFlags.isCvEnabled) {
-            route(Category.CV.path()) { CvView() }
+        if (featureFlags.isCvEnabled) {
+            route(Category.CV.path()) {
+                CvView(
+                    contacts = readProperty(Contacts.serializer(), js("require('./contacts.json')") as Any).web,
+                    cvContent = readProperty(CvContent.serializer(), js("require('./cv-content.json')") as Any)
+                )
+            }
         }
-        if (PropertyContext.featureFlags.isPortfolioEnabled) {
+        if (featureFlags.isPortfolioEnabled) {
             route(Category.PORTFOLIO.path()) {
                 route(INITIAL_PATH) { PortfolioView() }
                 string { uri ->
@@ -35,7 +44,7 @@ const val INITIAL_PATH = "/"
                 noMatch { PageNotFoundView() }
             }
         }
-        if (PropertyContext.featureFlags.isBlogEnabled) {
+        if (featureFlags.isBlogEnabled) {
             route(Category.BLOG.path()) {
                 noMatch { PageNotFoundView() }
             }
