@@ -8,7 +8,7 @@ object ChassisStyles : StyleSheet(GlobalStyle) {
 
     private val smallScreenProperties = ChassisResponsiveProperties(50.px, 20.px, 20.px)
     private val mediumScreenProperties = ChassisResponsiveProperties(70.px, 30.px, 80.px)
-    private val largeScreenProperties = ChassisResponsiveProperties(100.px, 40.px, 300.px)
+    private val largeScreenProperties = ChassisResponsiveProperties(100.px, 40.px, 20.percent)
 
     val panel by style {
         height(largeScreenProperties.panelHeight)
@@ -32,6 +32,10 @@ object ChassisStyles : StyleSheet(GlobalStyle) {
     val viewContainer by style {
         padding(0.px, largeScreenProperties.viewContainerPadding)
         margin(largeScreenProperties.panelHeight, 0.px)
+
+        media(mediaMaxWidth(1510.px)) {
+            self style { padding(0.px, 10.percent) }
+        }
 
         media(ResponsiveProperty.mediumScreen) {
             self style {
@@ -72,8 +76,8 @@ object ChassisStyles : StyleSheet(GlobalStyle) {
     }
 
     private data class ChassisResponsiveProperties(
-        val panelHeight: CSSSizeValue<CSSUnit.px>,
-        val panelPadding: CSSSizeValue<CSSUnit.px>,
-        val viewContainerPadding: CSSSizeValue<CSSUnit.px>,
+        val panelHeight: CSSSizeValue<out CSSUnit>,
+        val panelPadding: CSSSizeValue<out CSSUnit>,
+        val viewContainerPadding: CSSSizeValue<out CSSUnit>,
     )
 }
