@@ -23,7 +23,7 @@ enum class Category {
             val result = mutableSetOf<Category>()
             val featureFlags = readProperty(FeatureFlags.serializer(), js("require('./feature-flags.json')") as Any)
 
-            result += ROOT
+            if (featureFlags.isRootEnabled) result += ROOT
             if (featureFlags.isAboutMeEnabled) result += WHOAMI
             if (featureFlags.isCvEnabled) result += CV
             if (featureFlags.isPortfolioEnabled) result += PORTFOLIO
