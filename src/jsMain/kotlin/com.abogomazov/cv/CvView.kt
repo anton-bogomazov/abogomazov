@@ -18,8 +18,8 @@ import com.abogomazov.property.CvContent as CvContentProps
                 cvContacts = CvContacts(contacts.filter { it.important })
             ),
             summary = Summary(cvContent.summary),
-            experience = Experience.from(cvContent.experience.sortedBy { it.dateFrom }.reversed()),
-            education = Education.from(cvContent.education.sortedBy { it.dateFrom }.reversed()),
+            experience = Experience.from(cvContent.experience.reversed()),
+            education = Education.from(cvContent.education.reversed()),
             skills = Skill.from(cvContent.skills),
             projects = Project.from(cvContent.projects),
             languages = Language.from(cvContent.languages),
