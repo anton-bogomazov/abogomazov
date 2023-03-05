@@ -19,7 +19,7 @@ class AtTitle(
             RegularText(TextStyle.lessBold) { separator }
             RegularText(TextStyle.lessBold) { at }
         }
-        RegularText(TextStyle.monospace) { periodText }
+        RegularText(TextStyle.medium, TextStyle.monospace) { periodText }
     }
 
 }

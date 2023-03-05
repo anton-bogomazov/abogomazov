@@ -2,5 +2,6 @@
   "isAboutMeEnabled": false,
   "isCvEnabled": true,
   "isPortfolioEnabled": false,
-  "isBlogEnabled": false
+  "isBlogEnabled": false,
+  "isRootEnabled": false
 }

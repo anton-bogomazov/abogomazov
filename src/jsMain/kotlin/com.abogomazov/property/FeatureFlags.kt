@@ -8,4 +8,5 @@ data class FeatureFlags(
     val isCvEnabled: Boolean,
     val isPortfolioEnabled: Boolean,
     val isBlogEnabled: Boolean,
+    val isRootEnabled: Boolean,
 )
